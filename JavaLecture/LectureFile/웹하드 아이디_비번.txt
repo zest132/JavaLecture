@@ -1,0 +1,9 @@
+강사용 아이디/비번
+
+id : it300
+pw : koreait11!
+
+학생용 아이디/비번
+
+id : it3000
+pw : koreait11!
