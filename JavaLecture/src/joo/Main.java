@@ -9,11 +9,13 @@ public class Main {
 		
 
 		
-		for(int i=0; i<5;System.out.println("될까?"))
+		for(int i =0;i<=10;i++)
 		{
-			System.out.println("study JAVA");
-			i++;
+			System.out.println(i + " "+ (10-i));
 		}
+			
+
+	
 	
 		
 		
