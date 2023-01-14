@@ -7,18 +7,17 @@ public class Main {
 	public static void main(String[] args) {
 	
 		
-		
-		강의3실습문제 temp = new 강의3실습문제();
-		
-		temp.최종실습_1();
 
 		
-		
-		
-		
+		for(int i=0; i<5;System.out.println("될까?"))
+		{
+			System.out.println("study JAVA");
+			i++;
+		}
 	
 		
-
+		
+		
 	}
 	
 

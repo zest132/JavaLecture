@@ -183,18 +183,66 @@ public class 강의3실습문제 {
 
 	 * 
 	 * */
-	public void 최종실습_3()
+	public void 최종실습_3_1()
 	{
 		
-		Scanner scanner = new Scanner(System.in); //입력을 받기 위한 스캐너 객체를 생성
+		Scanner scan = new Scanner(System.in);
+		System.out.println("정수를 입력하세요.");
+		int number1 = scan.nextInt();
+		int number2 = scan.nextInt();
+		int number3 = scan.nextInt();
 		
-		System.out.println("숫자 3개를 입력하세요");
-		int number1 = scanner.nextInt();
-		int number2 = scanner.nextInt();
-		int number3 = scanner.nextInt();
+		
+		int mid=0;
+
+
+		if(number1>=number2) 
+		{
+			if(number3>=number1) {
+				mid = number1;
+			}else if(number3<=number2) {
+				mid = number2;
+			}else {
+				mid = number3;
+			}
+		}//number1<number2
+		else if(number3<number1) 
+			mid = number1;
+		else if(number3>number2) 
+			mid = number2;
+		else 
+			mid = number3;
+		
+
+
+		
+		System.out.println("중간값은 : "+mid+ "입니다.");
+
+	}
+	
+	public void 최종실습_3_2()
+	{
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("정수를 입력하세요.");
+		int number1 = scan.nextInt();
+		int number2 = scan.nextInt();
+		int number3 = scan.nextInt();
 		
 		
-		//if(number1> number2)
+		int max = number1;
+		int min = number1;
 		
+		if(max <number2) max = number2;
+		if(max <number3) max = number3;
+		
+		if(min >number2) min = number2;
+		if(min >number3) min = number3;
+		
+		//중간값 구하기
+		int mid = number1+number2+number3 - max-min;
+		
+		System.out.println("중간값은 : "+mid+ "입니다.");
+
 	}
 }
