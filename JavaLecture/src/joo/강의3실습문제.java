@@ -139,11 +139,9 @@ public class 강의3실습문제 {
 		
 		switch(computer - user)
 		{
-		case 0: System.out.println("무승부입니다."); break;
-		case -1:  case 2:System.out.println("승리"); break;
-		case -2:  case 1:System.out.println("패배"); break;
-			
-		
+			case 0: System.out.println("무승부입니다."); break;
+			case -1:  case 2:System.out.println("승리"); break;
+			case -2:  case 1:System.out.println("패배"); break;
 		}
 		
 	}
