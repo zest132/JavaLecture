@@ -171,57 +171,74 @@ public class 강의4실습문제 {
 			
 		}
 		
+		
+		/*
+		 * 구구단 가로 출력
+		 */
 		public void 최종실습_1()
 		{
-			for (int i = 1 ; i <= 9 ; i++) {
-				for (int j = 1; j <= 3; j++) {
-				int x = j+1+(i-1)/3*3;
-				int y = i%3==0? 3 : i%3 ;
-				if(x > 9) // 9 . 10 . 단까지만 출력한다 이 코드가 없으면 단까지 출력된다
-				break;
-				System.out.print(x+"*"+y+"="+x*y+"\t"); //println이 아님에 주의
+			for (int i = 1 ; i <= 9 ; i++) 
+			{
+				for (int j = 1; j <=3; j++)
+				{
+					int x=(j+1)+(i-1)/3*3;
+					int y= i%3==0 ? 3:i%3;
+					
+					if(x>=10)
+						break;
+					
+					System.out.print(x+"*" + y+ "="+ x*y+"\t");
+				
 				}
 				System.out.println();
-				if(i%3==0) System.out.println(); 
+				if(i%3==0)
+					System.out.println();
+					
 			}
 		}
 		
+		
+		
+		/*
+		 * 1부터 100사이 소수 구하기
+		 */
 		public void 최종실습_2()
 		{
-			int checkCounter = 30; //소수 출력을 원하는 개수
-			boolean isPrimeNumber = false; //검사한 수가 소수일때 true값을 가지는 참/거짓 변수
-					
-			for(int i = 1; checkCounter > 0 ; i++) { //검사하는 수를 1씩 증가 시키면서 반복한다
-				int counter = 0; //검사하는 수의 약수 갯수를 세는 카운터 변수
-						
-				for(int j = 1; j <= i; j++) { // 1부터 바깥 포문의 i값 까지 ... 1 ~ 1 -> 1 ~ 2순차적으로 계산
-					//약수가 존재하면 카운터를 증가시킨다
-					if(i % j == 0) counter++;
-				}
-				//카운터가 2인경우(약수가 2인경우)는 1과 자기자신 인 경우 밖에 없으므로 소수에 해당한다.
-				if(counter == 2)isPrimeNumber = true;
-				else isPrimeNumber = false;
+			int isPrimeNumber=2;
+
+			for (int i = 1 ; i <= 100 ; i++) 
+			{
+				for(;isPrimeNumber<i;isPrimeNumber++)
+					if(i%isPrimeNumber == 0) // 1과 자기자신외에 수가 나누어 떨어진다면 더 볼것 없이 소수가 아니다.
+						break;
+
 				
-				//소수를 출력하고 소수출력개수카운터를 1감소시킨다.
-				if(isPrimeNumber) {
-					System.out.print(i+", ");
-					checkCounter--;
-				}
+				if(i==isPrimeNumber)
+					System.out.print(i+" ");
+				
+				isPrimeNumber=2;
 			}
 		}
 		
+		
+		
+		/*
+		 * 1, 1 부터 시작하는 피보나치 수열 12번째수
+		 */
 		public void 최종실습_3()
 		{
-			// Fibonnaci 1, 1 . 수열의 시작의 첫 두 숫자를 로 한다
-			int num1 = 1;
-			int num2 = 1;
-			int num3 = 0; // 세번째 값
-			System.out.print(num1+","+num2);
-			for (int i = 0 ; i < 6 ; i++ ) {
-			num3 = num1 + num2; // . 세번째 값은 첫번째와 두번째 값을 더해서 얻는다
-			System.out.print(","+num3); // 세 번째 수열 출력
-			num1 = num2; // . 두 번째 수열을 첫 번째 값으로 한다
-			num2 = num3; // . 세 번째 수열을 두 번째 값으로 한다
+			int preNumber=0;
+			int fibonacci=1;
+			int nextNumber=1;
+			
+			for(int i =0;i<12;i++)
+			{
+				nextNumber = preNumber+fibonacci;
+				
+				System.out.print(fibonacci+" ");
+				
+				preNumber=fibonacci;
+				fibonacci = nextNumber;
 			}
 		}
 		
