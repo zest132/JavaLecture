@@ -1,5 +1,6 @@
 package joo;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -7,13 +8,15 @@ public class Main {
 	public static void main(String[] args) {
 	
 		
-		int[] student= new int[100];
+		int[] student= {30,50};
+		
+		System.out.println(student.toString());
+		
+		System.out.println(Arrays.toString(student));
 
-
-		int student2[] = new int[100];
 		
-		
-		
+		for(int i =0 ; i<student.length;i++)
+			System.out.println(student[i]);
 		
 	
 	}
