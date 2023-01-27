@@ -212,10 +212,6 @@ public class 강의5실습문제 {
 						
 						
 				}
-
-						
-							
-				
 			}
 			
 			
@@ -276,45 +272,117 @@ public class 강의5실습문제 {
 		
 		
 		/*
-		 * 1부터 100사이 소수 구하기
+		 * 아래의 그림처럼 2차원배열을 오른쪽 방향으로 90도 회전시켜보자
+			(한바퀴 도는 과정을 출력하자)
 		 */
 		public void 최종실습_2()
 		{
-			int isPrimeNumber=2;
+			char[][] star = {
+					{'*','*',' ',' ',' '}
+					,{'*','*',' ',' ',' '}
+					,{'*','*','*','*','*'}
+					,{'*','*',' ',' ',' '}
+					,{'*','*',' ',' ',' '}
+					};
+					char[][] result = new char[star[0].length][star.length];
+					for(int i=0; i < star.length;i++) 
+					{
+						for(int j=0; j < star[i].length;j++)
+							System.out.print(star[i][j]);
+					
+						System.out.println();
+					}
+					
+					System.out.println();
+					for(int i=0; i < star.length;i++) 
+					{
+						for(int j=0; j < star[i].length;j++) 
+						{
+							int x = j;
+							int y = star.length-1-i;
+							result[x][y]=star[i][j];
+						}
+					}
+					for(int i=0; i < result.length;i++)
+					{
+						for(int j=0; j < result[i].length;j++) 
+						{
+							System.out.print(result[i][j]);
+						}
+					System.out.println();
+					}
 
-			for (int i = 1 ; i <= 100 ; i++) 
-			{
-				for(;isPrimeNumber<i;isPrimeNumber++)
-					if(i%isPrimeNumber == 0) // 1과 자기자신외에 수가 나누어 떨어진다면 더 볼것 없이 소수가 아니다.
-						break;
-
-				
-				if(i==isPrimeNumber)
-					System.out.print(i+" ");
-				
-				isPrimeNumber=2;
-			}
 		}
 		
 		
 		
 		/*
-		 * 1, 1 부터 시작하는 피보나치 수열 12번째수
+		 * 1~25 사이의 셔플 2차원 배열[5][5]을 만든후 사용자로부터 좌표를 입력받아 해당좌표의 숫자를 공개하고 공개된숫자가 13일 경우 게임을 종료한다.
+		(힌트: 해당좌표의 공개여부를 저장하기위해 셔플된 2차원배열[5][5]을 2개 가지는 3차원 배열을 만들어야 한다!)
 		 */
 		public void 최종실습_3()
 		{
-			int preNumber=0;
-			int fibonacci=1;
-			int nextNumber=1;
+			//[1][][] -> 공개여부 저장 [0][][] -> 데이터
+			// arr[1][0][0] = 1   -> 0,0 좌표는 공개
+			int[][][] arr = new int[2][5][5];
+						
+			//1~25 순차 입력	
+			for(int i=0;i<arr[0].length;i++)
+				for(int j =0;j<arr[0][0].length;j++)
+					arr[0][i][j] = i*arr[0][0].length+(j+1);
+
+
+
 			
-			for(int i =0;i<12;i++)
+			//숫자 셔플
+			for(int shuffleCnt=0;shuffleCnt<100;shuffleCnt++)
 			{
-				nextNumber = preNumber+fibonacci;
+				int randomNumber = (int)(Math.random()*25)+1;
 				
-				System.out.print(fibonacci+" ");
+				for(int i=0;i<arr[0].length;i++)
+					for(int j =0;j<arr[0][0].length;j++)
+						if(arr[0][i][j] == randomNumber)//랜덤수와 동일한 숫자를 찾으면
+						{
+							//0,0 의 숫자와 바꿔서 섞는다.
+							int temp = arr[0][i][j];
+							arr[0][i][j] = arr[0][0][0];
+							arr[0][0][0] = temp;
+							break;
+						}
+			}
+			Scanner scan = new Scanner(System.in);
+			
+			while(true)
+			{
+				System.out.println("좌표를 입력하여 숫자 15를 찾으시오.:");
+				int input = scan.nextInt();
+				//해당좌표의 공개여부를 1로 바꾸어 공개로 설정한다.
+				arr[1][input%10][input/10] = 1;
 				
-				preNumber=fibonacci;
-				fibonacci = nextNumber;
+				
+				System.out.println("-------------------------------");
+				for(int i=0;i<arr[0].length;i++)
+				{
+					for(int j =0;j<arr[0][0].length;j++)
+					{
+						//공개로 설정되어 있으면 숫자를 공개한다
+						if(arr[1][i][j] == 1)
+							System.out.print(arr[0][i][j] + "\t");
+						else//아니면 별표 표시한다.
+							System.out.print("*\t");
+			
+					}
+					System.out.println();
+				}
+				
+				System.out.println("-------------------------------");
+				
+				if(arr[0][input%10][input/10] ==15)
+				{
+					System.out.println("정답입니다.");
+					break;
+				}
+				
 			}
 		}
 		
