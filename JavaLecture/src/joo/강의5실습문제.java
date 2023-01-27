@@ -1,5 +1,6 @@
 package joo;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class 강의5실습문제 {
@@ -32,79 +33,133 @@ public class 강의5실습문제 {
 		
 		
 		/*
-		 * 구구단 출력
+		 * int 타입 길이 10의 배열을 만들어 임의의 값을 넣고 최대값과 최소값을 출력하자
+    		(값은 Math.random() 을 이용하여 넣자)
 		 */
 		public void 문제1_2()
 		{
-			for(int i = 2 ;i<9; i++)
+			int[] arr = {5,478,41,2,45,758,14,3,97,10};
+			
+			int max,min;
+			
+			max = arr[0];
+			min = arr[0];
+					
+			for(int i = 1 ;i<arr.length; i++)
 			{
-				for(int j = 1 ;j<=9; j++)
-				{
-					System.out.println(i+" x " +j +" = "+ i*j);
-				}
+				if(max<arr[i]) max =arr[i];
+				
+				if(min>arr[i]) min =arr[i];
+
 			}
+			
+			System.out.println("최대값은 " +max);
+			System.out.println("최소값은 " +min);
 		}
 		
 		
 		/*
-		 * 엑스 출력하기
+		 * int타입 길이10의 배열에 0~9 까지의 랜덤한값을 넣은후 오름차순으로 정렬하여보자
 		 */
 		public void 문제1_3()
 		{
-			final int MAX = 10;
+			int[] arr = new int[10];
 			
-			for(int i = 0 ;i<=MAX; i++)
-			{
-				for(int j = 0 ;j<=MAX; j++)
-				{
-					if(i==j || MAX-i==j)
-						System.out.print("*");
-					else
-						System.out.print(" ");
-				}
-				System.out.println();
-			}
+			for(int i = 0 ;i<arr.length; i++)
+				arr[i] = (int)(Math.random()*10);
+
+			
+			System.out.println("정렬전: "+ Arrays.toString(arr));
+
+			
+			for(int i = 0 ;i<arr.length-1; i++)
+				for(int j =0;j<arr.length-1-i;j++)
+					if(arr[j] >arr[j+1])
+					{
+						int temp = arr[j+1];
+						arr[j+1] = arr[j];
+						arr[j] = temp;
+					}
+			
+			
+			System.out.println("정렬후: "+ Arrays.toString(arr));
 		}
 		
 		
 		/*
-		 * while문을 이용해 1부터 10까지 출력
+		 * 학생 5명의 국어, 영어, 수학 성적을 저장하는 2차원 배열을 만들어 저장하고 각 학생의 평균을 출력하여 보자
+		 * (길이3의 1차원배열 5개를 저장해야한다)
 		 */
 		public void 문제2_1()
 		{
-			int i=1;
-			
-			while(i<=10)
+			int[][] score = new int [][] {
+				{30,50,30}
+				,{70,20,90}
+				,{100,80,70}
+				,{90,40,30}
+				,{10,40,100}
+			}
+			;
+			System.out.println("국어 \t영어 \t수학 \t평균");
+			for(int[] student : score)
 			{
-				System.out.println(i);
-				i++;
+			int sum = 0;
+			
+			for(int i : student)
+			{
+			sum += i;
+			System.out.print(i+" \t");
+			
+			}
+			
+			System.out.print(sum/student.length);
+			
+			
+			System.out.println();
 			}
 			
 		}
 		
 		/*
-		 * 사용자로부터 숫자를 입력 받아 while을 이용해 각 자리의 합을 구하시오
-		 * 예) 12345   -> 1+2+3+4+5 =15
+		 * 2차원배열을 이용하여 숫자를 입력받아 암호화 하는 프로그램을 만들자.
 		 */
 		public void 문제2_2()
 		{
 			
-			int number = Util.getKeyBoardValueInt("숫자를 입력하세요:");
+			char[][] encryptGrid = {{'0',')'}
+			,{'1','!'}
+			,{'2','@'}
+			,{'3','#'}
+			,{'4','$'}
+			,{'5','%'}
+			,{'6','^'}
+			,{'7','&'}
+			,{'8','*'}
+			,{'9','('}
+			};
+			Scanner scan = new Scanner(System.in);
+			System.out.println("암호화할 숫자를 입력하세요 : ");
+			String input = scan.nextLine();
+			//사용자로 부터 받은 숫자
+			char[] plainText = input.toCharArray();
+			//암호화된 숫자를 저장하기 위한 배열
+			char[] encryptText = new char[plainText.length];
 			
-			int sum = 0;
 			
-			while(number !=0)
+			System.out.print("평문 : ");
+			System.out.println(plainText);
+			for(int i =0;i<plainText.length;i++)
 			{
-				//나머지연산을 하여 1의 자리의 숫자를 가져와 더한다.
-				sum +=number%10;
-				
-				System.out.println("현재 합계 : "+ sum);
-				
-				//10으로 나누어 1의 자리를 없앤다.
-				number /=10;
+			for(char[] temp :encryptGrid)
+			{
+				//같은 문자라면 암호화된걸로 교체 한다.
+				if(temp[0] == plainText[i])
+					encryptText[i] = temp[1];
 			}
-				
-			System.out.println("각 자리의 합계:" + sum);
+			}
+			
+			System.out.print("암호화 : ");
+			System.out.println(encryptText);
 			
 			
 			
@@ -112,98 +167,109 @@ public class 강의5실습문제 {
 		}
 		
 		/*
-		 *  1+2+3+4…  합계를 누적하여 몇까지 올라가야 누적합계가 150이 되는지를 출력하시오 
+		 *  1~25까지 숫자를 저장하는 2차원행렬을 만든후 값을 랜덤하게 섞어보자 (Math.random() 이용
+
 		 */
 		public void 문제2_3()
 		{
 			
-			int sum = 0;
+			int[][] arr = new int[5][5];
 			
-			int i=0;
-			while(sum<150)
+			System.out.println("---셔플전---");
+			for(int i=0;i<arr.length;i++)
 			{
-				sum +=++i;
-				System.out.println("누적 합계:"+sum+ "  현재 숫자 : "+i);
+				for(int j =0;j<arr[0].length;j++)
+				{
+					arr[i][j] = i*arr[0].length+(j+1);
+					System.out.print(arr[i][j] + "\t");
+				}
+				System.out.println();
+			}
+				
+			System.out.println("---------");
+			
+			
+			
+			//숫자 셔플
+			for(int shuffleCnt=0;shuffleCnt<100;shuffleCnt++)
+			{
+				int randomNumber = (int)(Math.random()*25)+1;
+				
+				for(int i=0;i<arr.length;i++)
+				{
+					for(int j =0;j<arr[0].length;j++)
+					{
+						//랜덤수와 동일한 숫자를 찾으면
+						if(arr[i][j] == randomNumber)
+						{
+							//0,0 의 숫자와 바꿔서 섞는다.
+							int temp = arr[i][j];
+							arr[i][j] = arr[0][0];
+							arr[0][0] = temp;
+							break;
+						}
+					}
+						
+						
+				}
+
+						
+							
+				
 			}
 			
-		}
-		
-		/*
-		 * 1. do while문을 이용하여 0~10까지 숫자중 짝수를 출력하자
-		 */
-		public void 문제3_1()
-		{
-			int i=0;
 			
-			do
+			System.out.println("---셔플후---");
+			for(int i=0;i<arr.length;i++)
 			{
-				if(i%2==0)
-					System.out.println(i);
-				
-				
-				i++;
-			}while(i<=10);
-		}
-		
-		/*
-		 * 2. do while문을 이용하여 숫자 맞추기 게임을 만들어보자
-		 */
-		public void 문제3_2()
-		{
-			int count=0;
-			Scanner scanner = new Scanner(System.in); //입력을 받기 위한 스캐너 객체를 생성
-			
-			
-			int computer =(int)(Math.random()*100)+1;
-			int user;
-			
-			do
-			{
-				//시도 횟수를 올린다.
-				count++;
-				
-				System.out.println("1~100 사이의 숫자를 입력하세요:");
-				 user = scanner.nextInt(); //키보드로부터 값을 입력 받아 저장한다.
-				
-				
-				if(computer> user)
-					System.out.println(user+" 보다 큽니다.");
-				else if(computer < user)
-					System.out.println(user+" 보다 작습니다.");
-				else
+				for(int j =0;j<arr[0].length;j++)
 				{
-					System.out.println("정답입니다. " + count+" 번 시도하였습니다.");
+				
+					System.out.print(arr[i][j] + "\t");
 				}
-					
-				
-				
-			}while(computer != user);
+				System.out.println();
+			}
+			
+			System.out.println("---------");
 			
 		}
 		
 		
+		
+		
 		/*
-		 * 구구단 가로 출력
+		 * 좌표를 입력받아 해당좌표에 x를 표시하자
 		 */
 		public void 최종실습_1()
 		{
-			for (int i = 1 ; i <= 9 ; i++) 
+			char[][] arr = new char[5][5];
+			
+			for(int y=0;y<arr.length;y++)
+				for(int x=0;x<arr.length;x++)
+					arr[y][x]=' ';
+			
+			
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.println("좌표를 입력하세요:");
+			int pos = scan.nextInt();
+			//입력한 좌표에 x 저장
+			arr[(pos/10)-1][(pos%10)-1] = 'X';
+			
+			
+					
+					
+			System.out.println(" 12345");
+			
+			for(int y=0;y<arr.length;y++)
 			{
-				for (int j = 1; j <=3; j++)
+				System.out.print(y+1);
+				for(int x=0;x<arr.length;x++)
 				{
-					int x=(j+1)+(i-1)/3*3;
-					int y= i%3==0 ? 3:i%3;
+					System.out.print(arr[y][x]);
 					
-					if(x>=10)
-						break;
-					
-					System.out.print(x+"*" + y+ "="+ x*y+"\t");
-				
 				}
 				System.out.println();
-				if(i%3==0)
-					System.out.println();
-					
 			}
 		}
 		

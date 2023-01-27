@@ -1,29 +1,50 @@
 package joo;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-	
 		
-		int[] arr = {10,20,30,40,50};
+		char[][] arr = new char[5][5];
 		
-		arr[0] = 10;
-		arr[1] = 20;
-		arr[2] = 30;
-		arr[3] = 40;
-		arr[4] = 50;
-		
-		int sum=0;
-		
-		for(int i = 0 ;i<arr.length; i++)
-			sum +=arr[i];
+		for(int y=0;y<arr.length;y++)
+			for(int x=0;x<arr.length;x++)
+				arr[y][x]=' ';
 		
 		
-		System.out.println(sum/(float)arr.length);
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("좌표를 입력하세요:");
+		int pos = scan.nextInt();
+		//입력한 좌표에 x 저장
+		arr[(pos/10)-1][(pos%10)-1] = 'X';
+		
+		
+				
+				
+		System.out.println(" 12345");
+		
+		for(int y=0;y<arr.length;y++)
+		{
+			System.out.print(y+1);
+			for(int x=0;x<arr.length;x++)
+			{
+				System.out.print(arr[y][x]);
+				
+			}
+			System.out.println();
+		}
+			
+		
+		
+		
+
+		
+		
+
 	}
-	
 
 	
 	
