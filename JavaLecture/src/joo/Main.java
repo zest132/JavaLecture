@@ -3,30 +3,74 @@ package joo;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+
+
+
+class Tv
+{
+	//데이터(멤버변수)
+	String color;
+	boolean power = false;
+	int channel =0;
+	
+	String state;
+	//기능(메서드)
+	void TurnOn()
+	{
+		if(state.equals("고장"))
+			return;
+		
+		power = true;
+		
+	}
+	
+	
+	
+	void TurnOff()
+	{
+		power = false;
+	}
+	void ChannelUp()
+	{
+		channel++;
+	}
+	void ChannelDown()
+	{
+		channel--;
+	}	
+	
+	
+	
+}
+
+class Archer
+{
+	
+	String color;
+	int power ;
+	int hp =0;
+	
+	void Attack()
+	{
+		
+	}
+}
+
 public class Main {
+
+	
+	static int add(int x, int y)
+	{
+		int result = x+y;
+		return result;
+	}
 
 	public static void main(String[] args) {
 		
 		
-		int isPrimeNumber=2;
-
-		for (int i = 1 ; i <= 100 ; i++) 
-		{
-			for(;isPrimeNumber<i;isPrimeNumber++)
-				if(i%isPrimeNumber == 0) // 1과 자기자신외에 수가 나누어 떨어진다면 더 볼것 없이 소수가 아니다.
-					break;
-
-			
-			if(i==isPrimeNumber)
-				System.out.print(i+" ");
-			
-			isPrimeNumber=2;
-		}
+		 add(15,20);
 		
-		
-
 	}
 
-	
-	
 }
