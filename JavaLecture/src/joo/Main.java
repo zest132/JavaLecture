@@ -80,20 +80,40 @@ class Archer
 	
 }
 
-public class Main {
-
-	
-	static int add(int x, int y)
+class MyMath
+{
+	 int add(int x, int y)
 	{
 		int result = x+y;
 		return result;
 	}
+	 
+	 int add(int x, int y , int z)
+	 {
+		 return x+y+z;
+	 }
+}
+public class Main {
 
 	public static void main(String[] args) {
 		
-		int a = 35;
+		Tv myTv = new Tv();
+
+		myTv.color = "BLACK";
+		myTv.TurnOn();
 		
-		 add(15,20);
+		Tv[] tv = new Tv[3];
+		
+		tv[0] = new Tv();
+		tv[1] = new Tv();
+		tv[2] = new Tv();
+		
+		tv[0].color = "RED";
+		tv[0].TurnOn();
+		
+		
+		System.out.println(tv[0].color);
+		
 		
 	}
 
