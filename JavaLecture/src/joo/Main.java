@@ -55,6 +55,29 @@ class Archer
 	{
 		
 	}
+	
+	 int add(int x, int y)
+	{
+		
+		return x+y;
+	}
+
+	 void add(int x, int y,int z)
+	{
+			int result = x+y+z;
+		
+	}
+	 
+	 int compare(int a , int b)
+	 {
+		 if(a>b)
+			 return a;
+		 
+		 
+		return b;
+		 
+	 }
+	
 }
 
 public class Main {
@@ -68,6 +91,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		int a = 35;
 		
 		 add(15,20);
 		
