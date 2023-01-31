@@ -44,75 +44,29 @@ class Tv
 	
 }
 
-class Archer
-{
-	
-	String color;
-	int power ;
-	int hp =0;
-	
-	void Attack()
-	{
-		
-	}
-	
-	 int add(int x, int y)
-	{
-		
-		return x+y;
-	}
 
-	 void add(int x, int y,int z)
-	{
-			int result = x+y+z;
-		
-	}
-	 
-	 int compare(int a , int b)
-	 {
-		 if(a>b)
-			 return a;
-		 
-		 
-		return b;
-		 
-	 }
-	
-}
 
-class MyMath
-{
-	 int add(int x, int y)
-	{
-		int result = x+y;
-		return result;
-	}
-	 
-	 int add(int x, int y , int z)
-	 {
-		 return x+y+z;
-	 }
-}
+
+
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Tv myTv = new Tv();
-
-		myTv.color = "BLACK";
-		myTv.TurnOn();
+		Archer[] archers = new Archer[10];
 		
-		Tv[] tv = new Tv[3];
-		
-		tv[0] = new Tv();
-		tv[1] = new Tv();
-		tv[2] = new Tv();
-		
-		tv[0].color = "RED";
-		tv[0].TurnOn();
-		
-		
-		System.out.println(tv[0].color);
+		int userNumber=0;
+		for(Archer archer : archers)
+		{
+			archer = new Archer();
+			archer.name ="유저"+userNumber;
+			archer.hp = (int)(Math.random()*100)+1;
+			archer.power = (int)(Math.random()*50)+1;
+			archer.armer = (int)(Math.random()*10)+1;
+			
+			archer.showState();
+			userNumber++;
+		}
 		
 		
 	}
