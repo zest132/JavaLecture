@@ -45,55 +45,69 @@ class Tv
 }
 
 
+class Test1
+{
+
+	
+	int a()
+	{
+		System.out.println("메서드 a 호출");
+		int result = b(); 
+		 
+		return result;
+	}
+	
+	int b()
+	{
+		System.out.println("메서드 b 호출");
+		return 0;
+	}
+	
+	
+
+
+}
+
+class Test2
+{
+	int c()
+	{
+		return 0;
+	}
+	
+	int d()
+	{
+		return 0;
+	}
+}
 
 
 
+class Test
+{
+	
+	int factorial(int n)
+	{
+		//입력값 필터링
+		if(n >=13 || n<0)
+			return 1;
+			
+		if(n ==1)
+			return 1;
+		
+		return n*factorial(n-1);
+	}
+}
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Archer[] archers = new Archer[10];
-		Archer[] sortedArchers = new Archer[archers.length];
+		Test t1 = new Test();
+		//!5 를 계산한다.
+		int result = t1.factorial(5);
 		
-		int userNumber=0;
-		for(Archer archer : archers)
-		{
-			archer = new Archer();
-			archer.name ="유저"+userNumber;
-			archer.hp = (int)(Math.random()*100)+1;
-			archer.power = (int)(Math.random()*50)+1;
-			archer.armer = (int)(Math.random()*10)+1;
-			archer.showState();
-			archers[userNumber] = archer;
-			userNumber++;
-			
-		}
-		
-		for(Archer insertArcher : archers)
-		{
-			for(int i =0 ; i<sortedArchers.length-1;i++)
-			{
-				if(sortedArchers[i] == null)
-				{
-					sortedArchers[i] =insertArcher;
-					break;
-				}
-				else if(sortedArchers[i].power >=  insertArcher.power)
-				{
-					System.arraycopy(sortedArchers, i, sortedArchers, i+1, sortedArchers.length-1-i);
-					sortedArchers[i] =insertArcher;
-					break;
-				}
-					
-			}
-			
-		}
-		
-		System.out.println("---공격력순으로 정렬---");
-		for(Archer archer : sortedArchers)
-			archer.showState();
-		
+	    System.out.println(result);
 	}
 
 }
