@@ -1,9 +1,7 @@
 package joo;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
-
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 
 
@@ -45,44 +43,6 @@ class Tv
 }
 
 
-class Test1
-{
-
-	
-	int a()
-	{
-		System.out.println("메서드 a 호출");
-		int result = b(); 
-		 
-		return result;
-	}
-	
-	int b()
-	{
-		System.out.println("메서드 b 호출");
-		return 0;
-	}
-	
-	
-
-
-}
-
-class Test2
-{
-	int c()
-	{
-		return 0;
-	}
-	
-	int d()
-	{
-		return 0;
-	}
-}
-
-
-
 class Test
 {
 	
@@ -99,15 +59,37 @@ class Test
 	}
 }
 
+class HanoiTower
+{
+	void a(int n, char from ,char tmp, char to)
+	{
+		if(n==1) 
+			System.out.println("원판 1을 "+from + "에서 " + to +"으로 옮긴다.");
+		else
+		{
+			a(n-1,from,to,tmp);
+			System.out.println("원판"+n+"를 "+from+"에서"+to+"으로 옮긴다.");
+			a(n-1,tmp,from,to);
+		}
+			
+			
+		
+	}
+}
+
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Test t1 = new Test();
-		//!5 를 계산한다.
-		int result = t1.factorial(5);
+		HanoiTower t1 = new HanoiTower();
 		
-	    System.out.println(result);
+	
+		t1.a(4,'A','B','C');
+
+		
+	
+	  
 	}
 
 }
