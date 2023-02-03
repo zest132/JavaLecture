@@ -68,7 +68,7 @@ class HanoiTower
 		else
 		{
 			a(n-1,from,to,tmp);
-			System.out.println("원판"+n+"를 "+from+"에서"+to+"으로 옮긴다.");
+			System.out.println("원판 "+n+"를 "+from+"에서 "+to+"으로 옮긴다.");
 			a(n-1,tmp,from,to);
 		}
 			
@@ -77,19 +77,66 @@ class HanoiTower
 	}
 }
 
+class test{
+	
+	void first()
+	{
+		second();
+	}
+	
+	void second()
+	{
+		System.out.println("second 호출!");
+	}
+}
+class Monster
+{
+	int distance;
+}
+
+
+class Marine
+{
+	int hp;
+	static int  shootingRange=6;
+	
+	void attack(Monster target)
+	{
+		if(shootingRange <target.distance)
+			move();
+	}
+	
+	void move()
+	{
+		
+	}
+	
+	void showState()
+	{
+		System.out.println("체력: "+hp+"\t 사정거리:"+shootingRange);
+	}
+	
+	static void test()
+	{
+		System.out.println("클래스 메서드 호출!");
+	}
+}
+
+
+
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		
-		HanoiTower t1 = new HanoiTower();
-		
+	MyTest t1= new MyTest();
 	
-		t1.a(4,'A','B','C');
-
-		
+	Point pt = t1.getPoint();
 	
-	  
+	System.out.println(pt);
+	
 	}
+	
+
 
 }

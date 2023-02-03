@@ -4,8 +4,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
+
+
 class MyMath
 {
+	int add(Point pt)
+	{
+		return pt.x + pt.y;
+	}
+	
 	int add(int x, int y)
 	{
 		return x+y;
