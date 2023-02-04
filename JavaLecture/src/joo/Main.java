@@ -43,7 +43,7 @@ class Tv
 }
 
 
-class Test
+class Factorial
 {
 	
 	int factorial(int n)
@@ -77,64 +77,74 @@ class HanoiTower
 	}
 }
 
-class test{
-	
-	void first()
-	{
-		second();
-	}
-	
-	void second()
-	{
-		System.out.println("second 호출!");
-	}
-}
+
 class Monster
 {
 	int distance;
 }
 
 
-class Marine
+class test
 {
-	int hp;
-	static int  shootingRange=6;
+	int a = 10;
+	static int b = 20;
 	
-	void attack(Monster target)
+	int c = b;
+	//static int d = a;
+	
+	static void staticMethod()
 	{
-		if(shootingRange <target.distance)
-			move();
+		//System.out.println(a);
+		System.out.println(b);
 	}
 	
-	void move()
+	void instanceMethod()
 	{
-		
+		System.out.println(a);
+		System.out.println(b);
 	}
 	
-	void showState()
+	static void staticMethod2()
 	{
-		System.out.println("체력: "+hp+"\t 사정거리:"+shootingRange);
+		staticMethod();
+		//instanceMethod();
 	}
 	
-	static void test()
+	void instanceMethod2()
 	{
-		System.out.println("클래스 메서드 호출!");
+		staticMethod();
+		instanceMethod();
 	}
 }
-
 
 
 
 public class Main {
 	
 	public static void main(String[] args) {
+			
 		
-	MyTest t1= new MyTest();
+		Marine marine1 = new Marine();
+		Marine marine2 = new Marine();
+		
+		marine1.powerUp();
+		marine1.armorUp();
 	
-	Point pt = t1.getPoint();
-	
-	System.out.println(pt);
-	
+		
+		marine1.attack(marine2);
+		
+		marine1.showState();
+		marine2.showState();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 
