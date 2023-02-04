@@ -83,7 +83,7 @@ class Monster
 	int distance;
 }
 
-
+/*
 class test
 {
 	int a = 10;
@@ -117,24 +117,25 @@ class test
 	}
 }
 
+*/
 
+class test{
+	int iv= 10;
+	void a()
+	{
+		int iv =5;
+		System.out.println(iv);
+	}
+}
 
 public class Main {
 	
 	public static void main(String[] args) {
 			
 		
-		Marine marine1 = new Marine();
-		Marine marine2 = new Marine();
+		test t1= new test();
 		
-		marine1.powerUp();
-		marine1.armorUp();
-	
-		
-		marine1.attack(marine2);
-		
-		marine1.showState();
-		marine2.showState();
+		t1.a();
 		
 		
 		
