@@ -103,24 +103,7 @@ class MyMath
 	
 }
 
-class Student
-{
-	String name;
-	int kor;
-	int eng;
-	int math;
-	int getTotal()
-	{
-		return kor+eng+math;
-	}
-	
-	int getAverage()
-	{
-		return kor+eng+math/3;
-	}
-	
-	
-}
+
 
 class Archer
 {

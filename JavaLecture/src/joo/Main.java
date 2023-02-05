@@ -120,31 +120,38 @@ class test
 */
 
 class test{
-	int iv= 10;
-	void a()
+	int a =10;
+	String name = "김길동";
+	
+	
+	void method()
 	{
-		int iv =5;
-		System.out.println(iv);
+		int b;
+		System.out.println(a);
+
+		
+	}
+	
+	void b()
+	{
+	
+	
 	}
 }
 
 public class Main {
 	
 	public static void main(String[] args) {
-			
+
 		
-		test t1= new test();
+		Student student1 = new Student();
 		
-		t1.a();
+		Student student2 = new Student();
 		
+		Student student3 = new Student();
+
 		
-		
-		
-		
-		
-		
-		
-		
+
 		
 	}
 	
