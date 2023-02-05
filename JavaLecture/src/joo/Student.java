@@ -6,21 +6,15 @@ public class Student
 	int kor ;
 	int eng ;
 	int math ;
-	static int number;
-	
-	static { 
-		System.out.println("클래스 초기화 블럭");
-		
-	}
+	static int count;
 	
 	{
-		System.out.println("인스턴스 초기화 블럭");
-		number++;
+		count++;
 	}
 	
 	Student()
 	{ 
-		System.out.println("생성자");
+		
 	}
 	
 	Student(String name)

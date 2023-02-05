@@ -119,39 +119,33 @@ class test
 
 */
 
-class test{
-	int a =10;
-	String name = "김길동";
-	
-	
-	void method()
-	{
-		int b;
-		System.out.println(a);
 
-		
-	}
-	
-	void b()
-	{
-	
-	
-	}
-}
 
 public class Main {
 	
 	public static void main(String[] args) {
 
-		
+		/*
 		Student student1 = new Student();
 		
-		Student student2 = new Student();
+		Student student2 = new Student("박주병");
 		
-		Student student3 = new Student();
+		Student student3 = new Student("홍길동",32,13,23);
 
+		System.out.println(Student.count);
+
+		*/
 		
-
+		System.out.println("마린5 이 저글링2을 공격하였습니다.");
+		System.out.println("마린1 이 저글링3을 공격하였습니다.");
+		System.out.println("저글링3이 죽었습니다.");
+		System.out.println("마린팀 공격턴 종료");
+		System.out.println("저글링2 이 마린5을 공격하였습니다.");
+		System.out.println("마린5이 죽었습니다.");
+		System.out.println("저글링팀 공격턴 종료");
+		System.out.println("마린1 이 저글링2을 공격하였습니다.");
+		System.out.println("저글링2이 죽었습니다.");
+		System.out.println("마린팀 승리 ! 남은 유닛 1개");
 		
 	}
 	
