@@ -2,18 +2,37 @@ package joo;
 
 public class Zergling {
 	
+	String name;
 	int hp=35;
 	static int power=5;
 	static int armor=0;
 
+	Zergling()
+	{
+		
+	}
 	
-	void attack(Marine target)
+	
+	Zergling(String name)
+	{
+		this.name = name;
+	}
+	
+	
+	
+	boolean attack(Marine target)
+	{
+		
+		target.hp -=(power-target.armor);
+		
+		return target.hp <=0;
+	}
+		
+	void attack(Zergling target)
 	{
 		
 		target.hp -=(power-target.armor);
 	}
-		
-	
 	
 	void showState()
 	{
