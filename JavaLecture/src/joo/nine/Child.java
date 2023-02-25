@@ -1,12 +1,9 @@
-package joo;
+package joo.nine;
 
 public class Child extends Parent{	
 	int age;
 	
-	Child()
-	{
-		
-	}
+
 
 	Child(String name , int age)
 	{

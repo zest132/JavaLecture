@@ -1,4 +1,4 @@
-package joo;
+package joo.nine;
 
 public class GrandParent {
 	
