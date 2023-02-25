@@ -1,19 +1,16 @@
 package joo;
 
-public class Child extends Parent{
-
-	
+public class Child extends Parent{	
 	int age;
 	
 	Child()
 	{
 		
 	}
-	
-	
+
 	Child(String name , int age)
 	{
-		this.name = name;
+		super(name);
 		this.age = age;
 	}
 	
