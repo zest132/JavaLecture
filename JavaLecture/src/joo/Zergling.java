@@ -1,15 +1,18 @@
 package joo;
 
-public class Zergling {
+public class Zergling extends Unit{
 	
 	String name;
 	int hp=35;
 	static int power=5;
 	static int armor=0;
-
-	Zergling()
+	public static int count;
+	public Zergling()
 	{
-		
+		hp = 40;
+		power = 5;
+		armor = 0;
+		count++;
 	}
 	
 	
@@ -20,32 +23,12 @@ public class Zergling {
 	
 	
 	
-	boolean attack(Marine target)
-	{
+	@Override
+	public void attack() {
+		System.out.println("박치기를 합니다!");
 		
-		target.hp -=(power-target.armor);
-		
-		return target.hp <=0;
-	}
-		
-	void attack(Zergling target)
-	{
-		
-		target.hp -=(power-target.armor);
 	}
 	
-	void showState()
-	{
-		System.out.println("체력: "+hp+"\t 공격력:"+power + "\t 방어력:"+armor);
-	}
-	
-	void powerUp()
-	{
-		power++;
-	}
-	
-	void armorUp()
-	{
-		armor ++;
-	}
+
+
 }

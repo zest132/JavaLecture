@@ -1,13 +1,13 @@
 package joo.nine;
 
-public class Car {
+public abstract class Car {
 	
 	
 	 int speed;
 	
 	 public Door doors[] = new Door[4];
 	 
-	 Car()
+	 public Car()
 	 {
 		 
 		//문 4개를 생성한다.

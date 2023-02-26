@@ -1,10 +1,19 @@
 package joo;
 
-public class Unit {
+public abstract class Unit {
 
-	int hp=40;
-	static int power=4;
-	static int armor=0;
+	int hp;
+	static int power;
+	static int armor;
+	public static int count=0;
+	
+	
+	Unit()
+	{
+		count++;
+	}
+	
+	abstract void attack();
 	
 	
 	
@@ -13,5 +22,13 @@ public class Unit {
 		return "체력: "+hp+"\t 공격력:"+power + "\t 방어력:"+armor;
 	}
 
+	public void powerUp()
+	{
+		power++;
+	}
 	
+	public void armorUp()
+	{
+		armor ++;
+	}
 }

@@ -5,7 +5,7 @@ public class Child extends Parent{
 	
 
 
-	Child(String name , int age)
+	public Child(String name , int age)
 	{
 		super(name);
 		this.age = age;

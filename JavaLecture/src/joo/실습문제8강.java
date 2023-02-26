@@ -36,14 +36,14 @@ public class 실습문제8강 {
 				
 				System.out.println(attacker.name+"이 "+target.name+"을 공격합니다.");
 				
-				
+				/*
 				//공격대상이 죽으면 저그리스트에서 제외한다.
 				if(attacker.attack(target))
 				{
 					System.out.println(target.name+"이 죽었습니다");
 					zerglings = BattleHelper.removeUnit(zerglings, target);
 				}
-					
+					*/
 			}
 			
 			System.out.println("마린팀 공격턴 종료");
@@ -63,13 +63,13 @@ public class 실습문제8강 {
 				
 				System.out.println(attacker.name+"이 "+target.name+"을 공격합니다.");
 				
-				
+				/*
 				//공격대상이 죽으면 타겟리스트에서 제외한다.
 				if(attacker.attack(target))
 				{
 					System.out.println(target.name+"이 죽었습니다");
 					marines=BattleHelper.removeUnit(marines, target);
-				}
+				}*/
 					
 			}
 			System.out.println("저글링팀 공격턴 종료");

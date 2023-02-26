@@ -3,12 +3,15 @@ package joo;
 public class Marine extends Unit{
 
 	String name;
-
+	public static int count;
 	
 	
-	Marine()
+	public Marine()
 	{
 		hp = 50;
+		power = 4;
+		armor = 0;
+		count++;
 	}
 	
 	
@@ -17,46 +20,20 @@ public class Marine extends Unit{
 		this.name = name;
 	}
 	
-	void attack(Marine target)
+	
+	
+	public void attack()
 	{
-		target.hp -=(power-target.armor);
+		System.out.println("총을 쏩니다.");
 		
 	}
 		
-	
-	
-	boolean attack(Unit target)
-	{
-		target.hp -=(power-target.armor);
-		
-		return target.hp<=0;
-	}
 	
 
 	
-	/*
-	 * @return 타겟의 사망여부 true =사망 false = 생존
-	 */
-	boolean attack(Zergling target)
-	{
-		
-		
-		target.hp -=(power-target.armor);
-		
-		
-		return target.hp<=0;
-	}
+
 	
-	void powerUp()
-	{
-		power++;	
-	}
-	
-	void armorUp()
-	{
-		armor ++;
-	}
-	
+
 	
 	
 	
