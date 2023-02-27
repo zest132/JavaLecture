@@ -23,7 +23,7 @@ public class Zergling extends Unit{
 	
 	
 	
-	@Override
+
 	public void attack() {
 		System.out.println("박치기를 합니다!");
 		

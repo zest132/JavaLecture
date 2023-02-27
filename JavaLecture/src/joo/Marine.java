@@ -8,6 +8,7 @@ public class Marine extends Unit{
 	
 	public Marine()
 	{
+		
 		hp = 50;
 		power = 4;
 		armor = 0;
