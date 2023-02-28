@@ -25,4 +25,21 @@ public class 실습문제10강 {
 		System.out.println(Marine.count);
 		System.out.println(Zergling.count);
 	}
+	
+	public void 문제3_2()
+	{
+		serverConnection con = serverConnection.getInstance();
+		serverConnection con1 = serverConnection.getInstance();
+		serverConnection con2 = serverConnection.getInstance();
+		serverConnection con3 = serverConnection.getInstance();
+		
+		//주소가 모두 동일하게 나온다.
+		System.out.println(con);
+		System.out.println(con1);
+		System.out.println(con2);
+		System.out.println(con3);
+		
+		
+		
+	}
 }
