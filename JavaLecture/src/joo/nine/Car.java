@@ -1,6 +1,6 @@
 package joo.nine;
 
-public abstract class Car {
+public  class Car {
 	
 	
 	 int speed;

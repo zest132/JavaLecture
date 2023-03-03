@@ -2,11 +2,15 @@ package joo.nine;
 
 public class OilCar extends Car{
 
-	int Oil;
+	public int Oil;
 	
 	public OilCar()
 	{
 		
 	}
 	
+	public boolean engineOilCheck()
+	{
+		return true;
+	}
 }
