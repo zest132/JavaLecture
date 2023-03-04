@@ -1,8 +1,8 @@
 package joo.ten;
 
-import joo.Marine;
-import joo.Unit;
-import joo.Zergling;
+import joo.eleven.Marine;
+import joo.eleven.Unit;
+import joo.eleven.Zergling;
 
 public class 실습문제10강 {
 

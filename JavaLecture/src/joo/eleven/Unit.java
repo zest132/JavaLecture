@@ -1,4 +1,4 @@
-package joo;
+package joo.eleven;
 
 public abstract class Unit {
 
@@ -15,8 +15,8 @@ public abstract class Unit {
 		count++;
 	}
 	
-	abstract void attack();
-	
+	public abstract void attack(Unit target);
+
 	
 	
 	public String toString()
@@ -33,4 +33,5 @@ public abstract class Unit {
 	{
 		armor ++;
 	}
+	
 }

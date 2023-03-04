@@ -1,19 +1,49 @@
 package joo;
 
-import joo.eleven.Child;
-import joo.eleven.Parent;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import joo.eleven.Marine;
+import joo.eleven.Tank;
+import joo.eleven.Unit;
+import joo.eleven.Zealot;
+import joo.eleven.Zergling;
+
+
 
 public class Main {
 	
 	public static void main(String[] args) {
 		
 		
-		
-		Parent test1 = new Child();
-		Child test2 = new Child();
-			
-		System.out.println(test1.getAge());
-		System.out.println(test2.getAge());
+	Unit unitList[] = new Unit[10];
+	
+	
+	
+	
+	
 
+	List<Unit> list = new ArrayList<Unit>();
+	
+	List<Unit> linkedList = new LinkedList<Unit>();
+	
+	
+	
+	list.add(new Marine());
+	list.add(new Zergling());
+	list.add(new Zealot());
+	list.add(new Tank());
+
+	for(Unit unit :list)
+	{
+			unit.attack(null);
+	}
+	
+	list.remove(2);// 질럿 삭제
+	
+	
+	
+	
 	}
 }

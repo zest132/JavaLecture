@@ -1,6 +1,7 @@
 package joo;
 
-
+import joo.eleven.Marine;
+import joo.eleven.Zergling;
 
 public class 실습문제8강 {
 

@@ -1,4 +1,4 @@
-package joo;
+package joo.eleven;
 
 public class Zergling extends Unit{
 	

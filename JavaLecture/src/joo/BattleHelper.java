@@ -1,5 +1,8 @@
 package joo;
 
+import joo.eleven.Marine;
+import joo.eleven.Zergling;
+
 public class BattleHelper {
 
 	static Zergling  getRandomUnit(Zergling[] zerglings)
