@@ -1,14 +1,10 @@
 package joo;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
-import joo.eleven.Marine;
-import joo.eleven.Tank;
-import joo.eleven.Unit;
-import joo.eleven.Zealot;
-import joo.eleven.Zergling;
+import joo.eleven.Bicycle;
+import joo.eleven.ShoppingBasket;
+import joo.eleven.Sofa;
+import joo.eleven.TV;
 
 
 
@@ -16,33 +12,26 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		ShoppingBasket shopping = new ShoppingBasket();
 		
-	Unit unitList[] = new Unit[10];
-	
-	
-	
-	
-	
-
-	List<Unit> list = new ArrayList<Unit>();
-	
-	List<Unit> linkedList = new LinkedList<Unit>();
-	
-	
-	
-	list.add(new Marine());
-	list.add(new Zergling());
-	list.add(new Zealot());
-	list.add(new Tank());
-
-	for(Unit unit :list)
-	{
-			unit.attack(null);
-	}
-	
-	list.remove(2);// 질럿 삭제
-	
-	
+/*
+		shopping.itemList.add(new Sofa(1,"샤넬쇼파",25000));
+		shopping.itemList.add(new Sofa(2,"푹신한쇼파",25000));
+		shopping.itemList.add(new TV(3,"삼성 QLED",10000));
+		shopping.itemList.add(new Bicycle(1,"빠른 자전거",5000));
+		*/
+		
+		shopping.addItem(new Sofa(1,"샤넬쇼파",25000));
+		shopping.addItem(new Sofa(2,"푹신한쇼파",25000));
+		shopping.addItem(new TV(3,"삼성 QLED",10000));
+		shopping.addItem(new Bicycle(1,"빠른 자전거",5000));
+		
+		System.out.println(shopping.getInfoList());
+		
+		
+		System.out.println("합계: "+shopping.getTotalPrice());
+		System.out.println("예상 적립 마일리지: "+shopping.getTotalMileage());
+		
 	
 	
 	}

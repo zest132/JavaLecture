@@ -1,6 +1,6 @@
 package joo.eleven;
 
-public interface interfaceTest {
+public interface interfaceTest extends ParentImpl,GrandParentImpl{
 	
 	// 멤버변수는 public static final 이어야 한다.
     public static final int TEST = 30;
