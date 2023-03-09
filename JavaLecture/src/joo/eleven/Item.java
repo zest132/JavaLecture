@@ -1,6 +1,8 @@
 package joo.eleven;
 
 public abstract class Item {
+	
+	
 	public int barcodNumber;
 	public String name;
 	public int price;
