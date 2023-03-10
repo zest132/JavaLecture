@@ -2,7 +2,7 @@ package joo;
 
 public class Student
 {
-	String name ;
+	public String name ;
 	int kor ;
 	int eng ;
 	int math ;
