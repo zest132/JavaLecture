@@ -1,10 +1,10 @@
 package joo;
 
-import joo.eleven.RPG.BlackSmith;
-import joo.eleven.RPG.Gun;
-import joo.eleven.RPG.Repairable;
-import joo.eleven.RPG.Sword;
-import joo.eleven.RPG.User;
+import joo.강의11.RPG.BlackSmith;
+import joo.강의11.RPG.Gun;
+import joo.강의11.RPG.Repairable;
+import joo.강의11.RPG.Sword;
+import joo.강의11.RPG.User;
 
 
 
@@ -13,13 +13,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-
-	
-		
-		
-		  
-		 
-	
 		
 	}
 }

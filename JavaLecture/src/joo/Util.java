@@ -11,7 +11,7 @@ public class  Util {
 		
 		Scanner scanner = new Scanner(System.in); //입력을 받기 위한 스캐너 객체를 생성
 		
-		System.out.println(str);
+		System.out.print(str);
 		String input = scanner.nextLine(); //키보드로부터 값을 입력 받아 input 변수에 저장한다.
 		
 		return input;
