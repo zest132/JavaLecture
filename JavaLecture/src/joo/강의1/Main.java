@@ -7,19 +7,28 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("안녕");
+		 
+	 char a = 110;
+	 
+	 System.out.println(a);
+	 
+	
+		
+	
+		
 	}
 	
-
-	
-	
-	
+	public static void a()
+	{
+		
+	}
 	
 	
 	
 	
 	public static void 실습문제1_1()
 	{
+		System.out.println("안녕");
 		System.out.println("Hello World!");
 	}
 	
