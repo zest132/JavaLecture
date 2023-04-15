@@ -1,12 +1,20 @@
 package joo.강의6;
 
-import java.util.Arrays;
-import java.util.Scanner;
 
 
-import joo.Util;
 
-
+class test
+{
+	void aaa()
+	{
+		System.out.println("1111");
+	}
+	
+	void aaa(int a)
+	{
+		System.out.println("2222");
+	}
+}
 
  class HanoiTower {
 	 
@@ -197,9 +205,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		실습문제2_2();
 
-		
 		
 	}
 	

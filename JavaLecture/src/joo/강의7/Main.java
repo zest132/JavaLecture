@@ -45,6 +45,7 @@ public class Main {
 		p1.RRN="950101-1234567";
 		p2.RRN="950101-6789123";
 		
+		
 		p1.showState();
 		p2.showState();
 	}
@@ -143,7 +144,9 @@ class Person
 		
 		}
 		
+		
 		/*
+		
 		if(gender.equals("1")
 			||gender.equals("3")
 			||gender.equals("5")
@@ -175,6 +178,9 @@ class Person
 		String generation = RRN.substring(7,8);
 		
 		
+	
+		
+		
 		switch(generation)
 		{
 			case "0","9":
@@ -191,12 +197,9 @@ class Person
 		int bornMonth = Integer.parseInt(RRN.substring(2,4));
 		
 		int bornDay = Integer.parseInt(RRN.substring(4,6));
-		
-		
+
 		int bornYear = nowYear - year-(nowMonth>= bornMonth && nowDay>= bornDay ? 0 : 1);
-		
-		
-		
+			
 		return bornYear;
 	}
 }
