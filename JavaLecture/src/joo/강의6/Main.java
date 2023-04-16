@@ -5,15 +5,14 @@ package joo.강의6;
 
 class test
 {
-	void aaa()
-	{
-		System.out.println("1111");
-	}
 	
-	void aaa(int a)
-	{
-		System.out.println("2222");
-	}
+	
+	
+	
+	
+	
+
+	
 }
 
  class HanoiTower {
@@ -186,19 +185,7 @@ class Tv
 
 
 
-class test{
-	
-	int a(int a)
-	{
-		return 1;
-	}
-	
-	int a()
-	{
-		return 1;
-	}
-	
-}
+
 
 public class Main {
 	

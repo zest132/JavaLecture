@@ -1,5 +1,33 @@
 package joo.강의8;
 
+
+
+
+class Student
+{
+	
+	String name;
+	int age;
+	
+	Student(String name1)
+	{
+		if(name1.length() <10)
+			name = name1;
+		else
+			System.out.println("10글자 이상은 안됩니다.");
+	}
+	
+	Student(String name1,int age1)
+	{
+		this(name1);
+		
+		
+		age = age1;
+	}
+
+}
+
+
 public class Main {
 
 	public static void main(String[] args) {
