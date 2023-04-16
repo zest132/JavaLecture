@@ -3,14 +3,31 @@ package joo.강의7;
 import java.awt.Point;
 import java.util.Calendar;
 
+class Test
+{
 
+	int age ;
+	
+	void Temp(Test target)
+	{
+		target.age = 30;
+	}
+}
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 
+		Test t1 = new Test();
+		
+		t1.age  =10;
+		
+		t1.Temp(t1);
+		
+		System.out.println(t1.age);
+
+		
 
 	}
 	
