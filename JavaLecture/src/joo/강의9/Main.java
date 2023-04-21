@@ -2,9 +2,30 @@ package joo.강의9;
 
 public class Main {
 
+	
+	class Parent
+	{
+		Parent(String name)
+		{
+			
+		}
+	}
+	
+	
+	
+	class Child extends Parent
+	{
+		Child()
+		{
+			super("");
+		}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
+		
+		Child test = new Child();
 	}
 
 	public static void 실습문제1_1()
