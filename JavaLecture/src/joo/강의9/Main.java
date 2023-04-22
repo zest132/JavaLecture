@@ -1,33 +1,53 @@
 package joo.강의9;
 
+
+
+class Parent1
+{
+	int age =50;
+
+}
+
+
+
+class Child1 extends Parent1
+{
+	int age;
+	
+	Child1()
+	{
+		/*
+		System.out.println(age);
+		System.out.println(this.age);
+		System.out.println(super.age);
+		
+		
+		
+		System.out.println(System.identityHashCode(age));
+		System.out.println(System.identityHashCode(this.age));
+		System.out.println(System.identityHashCode(super.age));*/
+
+	}
+}
+
+
 public class Main {
 
-	
-	class Parent
-	{
-		Parent(String name)
-		{
-			
-		}
-	}
-	
-	
-	
-	class Child extends Parent
-	{
-		Child()
-		{
-			super("");
-		}
-	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		
-		Child test = new Child();
+		Parent1 parent = new Parent1();
+		parent.age = 80;
+		
+		System.out.println(System.identityHashCode(parent.age));
+		Child1 child = new Child1();
+		
+		System.out.println(System.identityHashCode(child.age));
 	}
 
+	
 	public static void 실습문제1_1()
 	{
 		OilCar car = new OilCar();
@@ -60,6 +80,19 @@ public class Main {
 	}
 	
 	public static void 실습문제1_3()
+	{
+		ElectricCar car = new ElectricCar();
+		
+		car.battery= 50;
+		
+		car.Charge(30);
+		
+		System.out.println("현재 배터리량:"+car.battery);
+		
+	}
+	
+	
+	public static void 실습문제2_1()
 	{
 		ElectricCar car = new ElectricCar();
 		

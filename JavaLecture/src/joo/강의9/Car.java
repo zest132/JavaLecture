@@ -4,7 +4,7 @@ public  class Car {
 	
 	
 	 int speed;
-	
+	 
 	 public Door doors[] = new Door[4];
 	 
 	 public Car()
@@ -14,6 +14,7 @@ public  class Car {
 		 for(int i =0;i<doors.length;i++)
 			 doors[i] = new Door();
 	 }
+	 
 	 
 	 void go(int speed)
 	{
@@ -27,4 +28,8 @@ public  class Car {
 		speed = 0;
 	}
 
+	 
+	 
+	 
+	 
 }
