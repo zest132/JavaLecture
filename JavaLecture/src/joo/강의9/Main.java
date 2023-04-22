@@ -71,19 +71,20 @@ class Child1 extends Parent1
 class Product
 {
 	int price;
+	
 	Product(int price)
 	{
 		this.price = price;
 	}
-}
-
-class Tv extends Product
-{
-	Tv()
-	{
-		
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
 	}
 }
+
+
 
 
 public class Main {
@@ -93,7 +94,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 
-		Child1 child = new Child1();
+
 		
 
 	}
