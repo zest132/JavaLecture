@@ -1,12 +1,48 @@
 package joo.강의10;
 
 
+
+abstract class Animal
+{
+	abstract void go();
+	
+}
+
+
+class Tiger extends Animal
+{
+
+	void go() 
+	{
+		System.out.println("기어간다");
+		
+	}
+}
+
+class Bird extends Animal
+{
+
+	void go() {
+
+		System.out.println("날아간다");
+	}
+}
+
+
+
+
+
+
+
 public class Main {
 
 	public static void main(String[] args) {
 		
+		실습문제1_3();
 
 	}
+	
+	
 	
 	
 	public static void 실습문제1_1()
@@ -14,37 +50,35 @@ public class Main {
 		//지금까지 개발한 클래스들 패키지 나누기
 	}
 	
+	public static void 실습문제1_2()
+	{
+		//People 클래스 참조
+	}
+	
+	public static void 실습문제1_3()
+	{
+		People[] list = new People[5];
+		
+		
+		list[0]= new People("홍길동1",25,"000825-3456789" , "남자");
+		list[1]= new People("홍길동2",30,"950825-1456789" , "남자");
+		list[2]= new People("홍길동3",25,"000825-4456789" , "여자");
+		list[3]= new People("홍길동4",25,"000825-2456789" , "여자");
+		list[4]= new People("홍길동5",25,"000825-2456789" , "여자");
+		
+		for(People p : list)
+			
+		{
+			System.out.println(p.toString());
+			
+		}
+
+		
+	}
+	
+	
+	
 	public static void 실습문제2_1()
-	{
-		//Car 클래스 추상클래스로 변경
-		//new Car(); 불가능하다.
-	}
-	
-	public static void 실습문제2_2()
-	{
-		People p1= new People("123456-1234567", "남자");
-	}
-	
-	public void 실습문제2_3()
-	{
-		Marine marine = new Marine();
-		Marine marine2 = new Marine();
-		Zergling zergling = new Zergling();
-		
-		
-		marine.attack(zergling);
-		zergling.attack();
-		
-		System.out.println(marine.toString());
-		marine.powerUp();
-		System.out.println(marine2.toString());
-		
-		System.out.println(Unit.count);
-		System.out.println(Marine.count);
-		System.out.println(Zergling.count);
-	}
-	
-	public static void 실습문제3_1()
 	{
 		Time t = new Time();
 		t.setHour(30);
@@ -61,7 +95,7 @@ public class Main {
 		
 	}
 	
-	public static void 실습문제3_2()
+	public static void 실습문제2_2()
 	{
 		serverConnection con = serverConnection.getInstance();
 		serverConnection con1 = serverConnection.getInstance();

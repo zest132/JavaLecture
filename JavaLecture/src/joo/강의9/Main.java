@@ -5,35 +5,70 @@ import java.awt.Point;
 
 class Shape 
 {
-	Point p;
 	
-	Shape() 
+	double getArea()
 	{
-		this(new Point(0,0));
+		return 0;
 	}
 	
-	Shape(Point p) 
-	{
-		this.p = p;
-	}
-	
-	// 도형의 면적을 계산해서 반환하는 메서드
-	double calcArea()
-	{
-		return 1;
-	}
-	
-	Point getPosition() 
-	{
-		return p;
-	}
-	
-	void setPosition(Point p) 
-	{
-		this.p = p;
-	}
+
 }
 
+class Circle extends Shape
+{
+	double r;
+	
+	Circle(double r)
+	{
+		this.r = r;
+	}
+	
+	@Override
+	double getArea() {
+		
+		return Math.PI * r *r; 
+	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+	
+		return getArea() ==((Circle)obj).getArea();
+	}
+	
+	
+}
+
+class Rectangle extends Shape
+{
+	double width;
+	double height;
+	
+	Rectangle(double width , double height)
+	{
+		this.width = width ; 
+		this.height = height;
+	}
+	
+	
+	@Override
+	double getArea() {
+		// 
+		return width * height;
+	}
+	
+	boolean isSquare()
+	{
+		return width==height;
+	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+	
+		return getArea() ==((Rectangle)obj).getArea();
+	}
+}
 
 
 class Parent1
@@ -94,8 +129,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 
-
-		
+		실습문제2_4();
 
 	}
 
@@ -162,5 +196,31 @@ public class Main {
 		 * 자동 호출시 기본 생성자를 호출한다.
 		 * 
 		 */
+	}
+	
+	public static void 실습문제2_3()
+	{
+		Circle circle = new Circle(5);
+		Rectangle rectangle = new Rectangle(15, 15);
+		
+		System.out.println("반지름 5의 원의 면적: "+circle.getArea());
+		
+		System.out.println("네모 면적:"+rectangle.getArea());
+		
+		if(rectangle.isSquare())
+			System.out.println("정사각형 입니다.");
+	}
+	
+	public static void 실습문제2_4()
+	{
+		Circle circle = new Circle(5);
+		Circle circle2 = new Circle(5);
+		System.out.println(circle.equals(circle2));
+		
+		
+		Rectangle rectangle = new Rectangle(15, 15);
+		Rectangle rectangle2 = new Rectangle(15, 15);
+		System.out.println(rectangle.equals(rectangle2));
+	
 	}
 }
