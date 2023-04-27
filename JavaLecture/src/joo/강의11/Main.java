@@ -6,6 +6,8 @@ import joo.강의11.RPG.Repairable;
 import joo.강의11.RPG.Sword;
 import joo.강의11.RPG.User;
 
+
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -18,6 +20,14 @@ public class Main {
 		//클래스관의 관계를 설정하자.
 		// ShoppingBasket 은 포함관계로 List<Item> list 멤버변수를 가진다.
 		//TV, Sofa, Bicycle 은 Item을 상속 받는다.
+		
+		ShoppingBasket basket = new ShoppingBasket();
+		
+		basket.itemList.add(new TV());
+		basket.itemList.add(new Sofa());
+		
+	
+		
 	}
 	
 	public static void 실습문제1_2()
