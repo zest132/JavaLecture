@@ -2,6 +2,7 @@ package joo.강의11;
 
 import joo.강의11.RPG.BlackSmith;
 import joo.강의11.RPG.Gun;
+import joo.강의11.RPG.Punch;
 import joo.강의11.RPG.Repairable;
 import joo.강의11.RPG.Sword;
 import joo.강의11.RPG.User;
@@ -12,7 +13,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		실습문제2_4();
+		
 	}
 
 	public static void 실습문제1_1()
@@ -34,11 +36,14 @@ public class Main {
 	{
 		ShoppingBasket sb = new ShoppingBasket();
 		
-		//Item은 추상클래스
+
+		sb.itemList.add(new TV(1, "삼성50인치", 0));
+		sb.itemList.add(new Sofa(2, "푹신한쇼파", 23));
+		sb.itemList.add(new Bicycle(3, "천리마 자전거", 100));
 		
-		TV tv = new TV(1, "삼성50인치", 0);
-		Sofa sofa = new Sofa(2, "푹신한쇼파", 23);
-		Bicycle biscycle = new Bicycle(3, "천리마 자전거", 100);
+		System.out.println(sb.getInfoList());
+		
+		
 	}
 	
 	public static void 실습문제1_3()
