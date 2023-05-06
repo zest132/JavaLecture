@@ -5,6 +5,8 @@ public class User {
 	String id;
 	int hp;
 	public Weapon Weapon;
+
+	
 	
 	public User(String id, int hp, Weapon Weapon)
 	{

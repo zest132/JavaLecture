@@ -1,5 +1,74 @@
 package joo.강의9;
 
+import java.awt.Point;
+
+
+class Shape 
+{
+	
+	double getArea()
+	{
+		return 0;
+	}
+	
+
+}
+
+class Circle extends Shape
+{
+	double r;
+	
+	Circle(double r)
+	{
+		this.r = r;
+	}
+	
+	@Override
+	double getArea() {
+		
+		return Math.PI * r *r; 
+	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+	
+		return getArea() ==((Circle)obj).getArea();
+	}
+	
+	
+}
+
+class Rectangle extends Shape
+{
+	double width;
+	double height;
+	
+	Rectangle(double width , double height)
+	{
+		this.width = width ; 
+		this.height = height;
+	}
+	
+	
+	@Override
+	double getArea() {
+		// 
+		return width * height;
+	}
+	
+	boolean isSquare()
+	{
+		return width==height;
+	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+	
+		return getArea() ==((Rectangle)obj).getArea();
+	}
+}
 
 
 class Parent1
@@ -16,7 +85,7 @@ class Child1 extends Parent1
 	
 	Child1()
 	{
-		/*
+		
 		System.out.println(age);
 		System.out.println(this.age);
 		System.out.println(super.age);
@@ -25,10 +94,32 @@ class Child1 extends Parent1
 		
 		System.out.println(System.identityHashCode(age));
 		System.out.println(System.identityHashCode(this.age));
-		System.out.println(System.identityHashCode(super.age));*/
+		System.out.println(System.identityHashCode(super.age));
+		
+		System.out.println(this);
+		System.out.println(super.toString());
 
 	}
 }
+
+
+class Product
+{
+	int price;
+	
+	Product(int price)
+	{
+		this.price = price;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+}
+
+
 
 
 public class Main {
@@ -37,14 +128,9 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		
-		Parent1 parent = new Parent1();
-		parent.age = 80;
-		
-		System.out.println(System.identityHashCode(parent.age));
-		Child1 child = new Child1();
-		
-		System.out.println(System.identityHashCode(child.age));
+
+		실습문제2_4();
+
 	}
 
 	
@@ -94,13 +180,47 @@ public class Main {
 	
 	public static void 실습문제2_1()
 	{
-		ElectricCar car = new ElectricCar();
 		
-		car.battery= 50;
+		/*
+		 * 오버라이딩은 메서드가 반환타입까지 포함하여 완전히 일치해야한다
+		 * 공변반환타입만 예외가 적용된다.
+		 */
 		
-		car.Charge(30);
+	}
+	
+	public static void 실습문제2_2()
+	{
 		
-		System.out.println("현재 배터리량:"+car.battery);
+		/*TV의 부모인 Product의 기본 생성자가 없다. 
+		 * 자식은 무조건 부모의 생성자를 호출하도록되어 있으며
+		 * 자동 호출시 기본 생성자를 호출한다.
+		 * 
+		 */
+	}
+	
+	public static void 실습문제2_3()
+	{
+		Circle circle = new Circle(5);
+		Rectangle rectangle = new Rectangle(15, 15);
 		
+		System.out.println("반지름 5의 원의 면적: "+circle.getArea());
+		
+		System.out.println("네모 면적:"+rectangle.getArea());
+		
+		if(rectangle.isSquare())
+			System.out.println("정사각형 입니다.");
+	}
+	
+	public static void 실습문제2_4()
+	{
+		Circle circle = new Circle(5);
+		Circle circle2 = new Circle(5);
+		System.out.println(circle.equals(circle2));
+		
+		
+		Rectangle rectangle = new Rectangle(15, 15);
+		Rectangle rectangle2 = new Rectangle(15, 15);
+		System.out.println(rectangle.equals(rectangle2));
+	
 	}
 }

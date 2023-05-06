@@ -9,7 +9,7 @@ import java.util.List;
 public class ShoppingBasket {
 
 	//현재 장바구니에 담긴 물품 리스트
-	private List<Item> itemList = new ArrayList();
+	public List<Item> itemList = new ArrayList();
 	
 	
 
@@ -48,11 +48,6 @@ public class ShoppingBasket {
 	{
 
 
-		
-		
-		
-
-	
 		
 			
 	}

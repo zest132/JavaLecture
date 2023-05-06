@@ -8,6 +8,11 @@ public abstract class Item {
 	public int price;
 	public int mileagePercent;
 	
+	public Item()
+	{
+		
+	}
+	
 	public Item(int barcodNumber,String name, int price)
 	{
 		this.barcodNumber = barcodNumber;

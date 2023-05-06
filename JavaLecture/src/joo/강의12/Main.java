@@ -36,6 +36,8 @@ public class Main {
 	{
 		throw new MyException("내가만든 예외");
 	}
+	
+	
 	public static void 실습문제1_1()
 	{
 		try

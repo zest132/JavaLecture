@@ -1,5 +1,7 @@
 package joo.강의11;
 
+
+
 public class SCV extends Unit implements Repairable{
 	
 	@Override
@@ -21,4 +23,10 @@ public class SCV extends Unit implements Repairable{
 		//유닛마다 각자의 수리속도와 방법이 다를텐데 SCV입장에선 고려할 필요가 없다.이것이 객체지향!
 		unit.repaired();
 	}
+	
+
+	
+	
+	
+	
 }

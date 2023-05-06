@@ -2,15 +2,19 @@ package joo.강의11;
 
 import joo.강의11.RPG.BlackSmith;
 import joo.강의11.RPG.Gun;
+import joo.강의11.RPG.Punch;
 import joo.강의11.RPG.Repairable;
 import joo.강의11.RPG.Sword;
 import joo.강의11.RPG.User;
+
+
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		실습문제2_4();
+		
 	}
 
 	public static void 실습문제1_1()
@@ -18,17 +22,28 @@ public class Main {
 		//클래스관의 관계를 설정하자.
 		// ShoppingBasket 은 포함관계로 List<Item> list 멤버변수를 가진다.
 		//TV, Sofa, Bicycle 은 Item을 상속 받는다.
+		
+		ShoppingBasket basket = new ShoppingBasket();
+		
+		basket.itemList.add(new TV());
+		basket.itemList.add(new Sofa());
+		
+	
+		
 	}
 	
 	public static void 실습문제1_2()
 	{
 		ShoppingBasket sb = new ShoppingBasket();
 		
-		//Item은 추상클래스
+
+		sb.itemList.add(new TV(1, "삼성50인치", 0));
+		sb.itemList.add(new Sofa(2, "푹신한쇼파", 23));
+		sb.itemList.add(new Bicycle(3, "천리마 자전거", 100));
 		
-		TV tv = new TV(1, "삼성50인치", 0);
-		Sofa sofa = new Sofa(2, "푹신한쇼파", 23);
-		Bicycle biscycle = new Bicycle(3, "천리마 자전거", 100);
+		System.out.println(sb.getInfoList());
+		
+		
 	}
 	
 	public static void 실습문제1_3()
