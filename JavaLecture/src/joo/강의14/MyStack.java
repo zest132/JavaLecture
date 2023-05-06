@@ -19,6 +19,7 @@ public class MyStack<T> {
         {
             throw new RuntimeException("Stack is empty");
         }
+        
         T value = stack.get(stack.size()-1);
         stack.remove(stack.size()-1);
         return value;

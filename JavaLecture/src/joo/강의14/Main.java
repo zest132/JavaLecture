@@ -9,10 +9,35 @@ public class Main {
 
 	
 		
-		 
+		실습문제2_1();
 
 	}
 	
+	
+	public static void 실습문제1_1()
+	{
+		People p1 = new People();
+		
+		p1.hobby = People.HOBBY.BASEBALL;
+		System.out.println(p1.hobby);
+	}
+	
+	
+	
+	public static void 실습문제1_2()
+	{
+		MyStack<String> stack = new MyStack<>();
+		
+		stack.push("1번");
+		stack.push("2번");
+		stack.push("3번");
+		
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		
+		
+	}
 	
 	public static void 실습문제2_1()
 	{
@@ -70,13 +95,7 @@ public class Main {
 		JOptionPane.showInputDialog("값을 입력하세요");
 	}
 	
-	public static void 실습문제1_1()
-	{
-		People p1 = new People();
-		
-		p1.hobby = People.HOBBY.BASEBALL;
-		System.out.println(p1.hobby.value);
-	}
+
 	
 	public static void 쓰레드예제()
 	{
