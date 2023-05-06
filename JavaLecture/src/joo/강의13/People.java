@@ -21,7 +21,7 @@ public class People implements Cloneable{
 	@Override
 	public String toString() {
 		
-		return "주민번호: "+ RRN + " 이름: " + name;
+		return "주민번호: "+ RRN + " 이름: " + name+ " 나이:" + age;
 	}
 	
 	@Override  

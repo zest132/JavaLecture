@@ -22,7 +22,18 @@ public class Main {
 		// TODO Auto-generated method stub
 	
 		
+
+		System.out.println(0.1+0.2);
+		/*
+		int result = Math.abs(-30);
 		
+		System.out.println(result);
+		
+		 result = Math.min(15, -5);
+		System.out.println(result);
+		
+		*/
+		/*
 		Box<String> box = new Box<>();
 		Box<Integer> box2 = new Box<>();
 		box.setItem("가나다라");
@@ -38,7 +49,7 @@ public class Main {
 		
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
-		System.out.println(stack.pop());
+		System.out.println(stack.pop());*/
 	}
 	
 	
@@ -71,12 +82,6 @@ public class Main {
 		System.out.println(w2.toString());
 	}
 	
-	public static void 실습문제1_4()
-	{
-		for(int i=0;i<10;i++)
-			System.out.println(getRandom(-5,10)+",");
-	}
-	
 	public static void 실습문제2_1()
 	{
 		String date = "20190311";
@@ -90,6 +95,14 @@ public class Main {
 	}
 	
 	public static void 실습문제2_2()
+	{
+		for(int i=0;i<10;i++)
+			System.out.println(getRandom(-5,10)+",");
+	}
+	
+
+	
+	public static void 실습문제3_1()
 	{
 		MyStack<String> stack = new MyStack<>();
 		
