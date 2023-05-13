@@ -38,8 +38,8 @@ public class Main {
 		String temp = hobby.get(1).toString();
 		System.out.println(temp);
 		
-		/*
 		
+		/*
 		
 		data="[단일데이터,{이름:홍길동, 나이:29},[1,2,3]]";
 		JSONArray jsonarr = new JSONArray(data);
