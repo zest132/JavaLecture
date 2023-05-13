@@ -346,4 +346,25 @@ public class Main {
 			System.out.println(ex.toString());
 		}
 	}
+	
+	
+	public static void 실습문제2_1()
+	{
+		//객체는 JSONObject  ,JSONArray
+		//기본형, 객체, 배열
+		//get() , getJSONObject() , getJSONArray()
+		
+		String data = "{이름:홍길동 , 친구:{이름:김길동,나이:10} , 취미:[먹기,축구,당구]}";
+		JSONObject json = new JSONObject(data);
+		
+		System.out.println(json.get("이름").toString());
+		
+		JSONObject f = json.getJSONObject("친구");
+		System.out.println(f.get("이름"));
+		
+		JSONArray hobby = json.getJSONArray("취미");
+		
+		String temp = hobby.get(1).toString();
+		System.out.println(temp);
+	}
 }
