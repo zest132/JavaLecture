@@ -13,7 +13,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-	
+		JSONObject json = new JSONObject();
+		
+		json.
 		
 		//객체는 JSONObject  ,JSONArray
 		//기본형, 객체, 배열
