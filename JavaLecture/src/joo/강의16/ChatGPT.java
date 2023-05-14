@@ -1,163 +1,194 @@
 package joo.강의16;
 
 import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
-import joo.강의16.ChatGPTJson.Role;
 
-/**
- * ChatGPT 학습을 위한 샘플 클래스
- * 싱글톤으로 구현한다.
- * @author 박주병
- *
- */
 public class ChatGPT {
 
-	private static ChatGPT instance =null;
+	private String key;
 	
-	HttpURLConnection con;
-	String key;
+	private JSONObject sendMsg = new JSONObject();
 	
-	//String model="text-davinci-003";
-	//String preMsg = "{\"model\": \""+model+"\", \"prompt\": \"";
-	//String sufMsg = "\",\"max_tokens\":1024}";
+	private HttpURLConnection con;
 	
-	URL url;
-	ChatGPTJson msg = new ChatGPTJson("gpt-3.5-turbo");
+	public ChatGPT(String key)
+	{
+		this.key = key;
+		 
+		 sendMsg.put("model", "gpt-3.5-turbo");
+		 sendMsg.put("messages",new  JSONArray() );
+	}
 	
 	
-	//String preMsg ="{\"model\": \"gpt-3.5-turbo\",\"messages\":[";
+	public HttpURLConnection connect()
+	{
+		return connect("https://api.openai.com/v1/chat/completions");
+	}
 	
-	//String sufMsg = "]}";
+	public HttpURLConnection connect(String url)
+	{
+		
+		try
+		{
+			//객체화한 url을 통해 http통신을 위한 객체를 생성한다.메서드 방식은 POST 이다.
+			con = (HttpURLConnection)new URL( url).openConnection();
+			con.setRequestMethod("POST");
+			//http 통신시 데이터 형태는 json이라고 선언
+			con.setRequestProperty("Content-Type", "application/json; utf-8");
+			//발급받은 키값을 넣어준다.
+			con.setRequestProperty("Authorization","Bearer "+key);
+			//chatGPT의 대답이 느릴경우 기다려주는 타임을 설정
+			con.setRequestProperty("Retry-After","3600");
+			//데이터 전송을 위해 true로 설정해야 한다.
+			con.setDoOutput(true);
+			
+		}catch(Exception ex)
+		{
+			System.out.println(ex.toString());
+		}
+		
+		return con;
+		
+	}
+	
+	public String makeJsonMsg(String role , String msg)
+	{
+		
+		//json 형태로 되어있고 모델 정보와 메시지 정보가 들어가 있다.
+		//chatGPT가 했던 대답은 role 이 assistant 이여야 한다.
+		//예제 -> messages\":[{\"role\":\"user\",\"content\":\"안녕\"},{\"role\":\"assistant\",\"content\":\"chatGPT의 대답\"}]
+		//String json = "{\"model\": \"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":\""+msg+"\"}]}";
 
+		JSONArray messages = (JSONArray)sendMsg.get("messages");
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("role", role);
+		json.put("content", msg);
+		
+		messages.put(json);
+		
+		
+		return sendMsg.toString();
+		
+	}
 	
-	
-	
-	private ChatGPT(String key)	
+	public void send(String msg)
 	{
 		try
 		{
-
-			//url = new URL("https://api.openai.com/v1/completions");
-			url = new URL("https://api.openai.com/v1/chat/completions");
+			//chatGPT에게 전달한 JSON 형태로 변환한다.
+			String json = makeJsonMsg("user",msg);
 			
-			this.key = key;
+			send(con.getOutputStream(),json);
 			
-		}catch (Exception e) {
-			System.out.println("url 생성 오류");
-			System.out.println(e);
-		}
-		
-	}
-	
-	public static ChatGPT getInstance(String key)
-	{
-		if(instance ==null)
-			instance = new ChatGPT(key);
-		
-
-		return instance;
-	}
-	
-	/*
-	 * return : Response Code 를 반환한다. 200=정상 그외 오류 
-	 */
-	private void send(String msg) throws Exception
-	{
-		//CjatGPTJson 객체를 이용하여 Json 형태로 메시지를 만든다.
-		this.msg.addMsg(Role.USER, msg);
-		
-		
-		//System.out.println(this.msg.toString());
-		
-		//http는 비연결성이기에 매 채팅마다 연결을 새로 해줘야 한다.
-		con = (HttpURLConnection) url.openConnection();
-		con.setRequestMethod("POST");
-		con.setRequestProperty("Content-Type", "application/json; utf-8");
-		con.setRequestProperty("Authorization","Bearer "+key);
-		con.setRequestProperty("Retry-After","3600");
-
-		con.setDoOutput(true);
-		
-		
-		
-		try(OutputStream out = con.getOutputStream())
-		{
-			//문자열을 보내기전에 개행을 제거 하고 보낸다.
-			byte[] inputBytes = this.msg.toString().replaceAll("\\R", "").getBytes("utf-8");
-			out.write(inputBytes,0,inputBytes.length);
-			Thread.sleep(2000);
-			 con.getResponseCode();
 		}catch(Exception ex)
 		{
-			throw ex;
+			System.out.println(ex.toString());
+		}
+		
+	}
+
+	public void send(OutputStream out , String msg)
+	{
+		
+		try
+		{
+			//문자열을 보내기전에 utf-8 형태로 인코딩을 변환하고 바이트로 변경한다.
+			byte[] inputBytes = msg.getBytes("utf-8");
+			//스트림으로 바이트로된 메시지를 전달한다.
+			out.write(inputBytes);
+			
+			out.close();
+		}catch(Exception ex)
+		{
+			System.out.println(ex.toString());
+		}
+
+	}
+	
+	public String receive()
+	{
+		try
+		{
+			//chatGPT로 부터 응답코드를 받아온다 200이면 정상이다.에러가 발생하면 예외가 발생된다.
+			con.getResponseCode();
+			
+			
+			
+			
+			String json = receive(con.getInputStream());
+			String msg = parseJsonMsg(json);
+			
+			//json 형태의 메시지는 받았을때는 필요 없으니 반환값을 따로 저장해두진 않는다.
+			makeJsonMsg("assistant",msg);
+			
+			return msg;
+			
+		}catch(Exception ex)
+		{
+			System.out.println(ex.toString());
 		}
 		
 		
-		
+		return null;
 	}
 	
-	private String response() throws Exception
+	public String receive(InputStream in)
 	{
-	
-		try(BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(),"utf-8")))
+		StringBuilder response = new StringBuilder();
+		try
 		{
-			StringBuilder response = new StringBuilder();
-			
+			//chatGPT가 보내온 응답을 받기 위해 InputStream을 열고 버퍼를 통해 받아온다.
+			//InputStreamReader 클래스는 바이트기반스트림을 문자기반스트림으로 변환해준다.
+			BufferedReader br = new BufferedReader(new InputStreamReader(in,"utf-8"));
+		
+			//응답을 저장할 String 변수이다.
 			String responseLine  = null;
 			
+			//버퍼로 부터 데이터를 가져온다.readLine()은 문자열에서 개행이 있는부분까지 한번에 가져온다.
+			//더이상 가져올 문자가 없다면 null이 반환된다.
 			while((responseLine = br.readLine()) != null)
 			{
+				//trim은 공백을 제거 하는 메서드 이다. 
+				//chatGPT 테스트 결과 가끔 응답에 공백을 많이 넣어준다. 
+				//대답이 길경우 성능향상을 위해 StringBuilder를 사용했다.
 				response.append(responseLine.trim());
 			}
 			
-			
-			JSONObject obj = new JSONObject(response.toString()); 
-			  String result =obj.getJSONArray("choices")
-							  .getJSONObject(0)
-							  .getJSONObject("message")
-							  .get("content").toString();
-			
-			  
-			return result;
+			br.close();
 		}catch(Exception ex)
 		{
-			throw ex;
+			System.out.println(ex.toString());
 		}
 		
 		
+		return response.toString();
 	}
-	public String chatting(String msg)
-	{
-		try
-		{
-			
-			 send(msg);
-			
-			
-			 String result = response();
-			 
-			 //AI의 응답을 다시 JSON으로 에코시키기 위해 AI의 응답역시 메시지에 포함시킨다.
-			 this.msg.addMsg(Role.ASSISTANT, result);
 	
-			 return result;
-			
-		}catch(IOException ex)
-		{
-			return "인증키를 확인하세요"+ex.toString();
-		}
-		catch(Exception ex)
-		{
-			return ex.toString();
-		}
-		
+	
 
+	
+	
+	
+	public String parseJsonMsg(String json)
+	{
+		//chatGPT로 부터 받은 JSON 데이터를 파싱하여 대답 부분만 추출한다.
+		JSONObject obj = new JSONObject(json); 
+		String result =obj.getJSONArray("choices")
+						  .getJSONObject(0)
+						  .getJSONObject("message")
+						  .get("content").toString();
 		
+		
+		return result;
 	}
 }

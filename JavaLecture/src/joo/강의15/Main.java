@@ -21,54 +21,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//객체는 JSONObject  ,JSONArray
-		//기본형, 객체, 배열
-		//get() , getJSONObject() , getJSONArray()
 		
-		String data = "{이름:홍길동 , 친구:{이름:김길동,나이:10} , 취미:[먹기,축구,당구]}";
-		JSONObject json = new JSONObject(data);
+		실습문제2_2();
 		
-		System.out.println(json.get("이름").toString());
-		
-		JSONObject f = json.getJSONObject("친구");
-		System.out.println(f.get("이름"));
-		
-		JSONArray hobby = json.getJSONArray("취미");
-		
-		String temp = hobby.get(1).toString();
-		System.out.println(temp);
-		
-		
-		/*
-		
-		data="[단일데이터,{이름:홍길동, 나이:29},[1,2,3]]";
-		JSONArray jsonarr = new JSONArray(data);
-		
-		
-		
-	
-		System.out.println(jsonarr);
-		
-		*/
-
-		
-		
-		/*
-		
-		String str = "{\"id\":\"chatcmpl-6vX5cfe1VRa29F7AzS8kBmYjbh4In\",\"object\":\"chat.completion\",\"created\":1679169912,\"model\":\"gpt-3.5-turbo-0301\",\"usage\":{\"prompt_tokens\":11,\"completion_tokens\":32,\"total_tokens\":43},\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"하세요! 저는 AI 어시스턴트입니다. 어떤 도움이 필요하신가요?\"},\"finish_reason\":\"stop\",\"index\":0}]}";
-		
-		JSONObject obj = new JSONObject("{\"취미\":[\"야구\",\"게임\"]}"); 
-		//value가 배열일때 getJSONArray 를 사용한다.
-		//["야구","게임"] 에서 get(0)은 배열의 첫번째 값을 가져온다는것이다.
-		String result =obj.getJSONArray("취미").get(0).toString();
-		System.out.println(result);
-		
-		JSONArray arr = new JSONArray("[{\"이름\":\"박주병\"},{\"이름\":\"홍길동\"}]"); 
-		//value가 배열이고 배열의 요소가 객체일때
-		result =arr.getJSONObject(1).get("이름").toString();
-		System.out.println(result);
-		
-		*/
 		
 	}
 	
@@ -350,21 +305,48 @@ public class Main {
 	
 	public static void 실습문제2_1()
 	{
-		//객체는 JSONObject  ,JSONArray
-		//기본형, 객체, 배열
-		//get() , getJSONObject() , getJSONArray()
-		
-		String data = "{이름:홍길동 , 친구:{이름:김길동,나이:10} , 취미:[먹기,축구,당구]}";
+
+		 String data = "{이름:홍길동"
+				 		+ ",나이:59"
+				 		+ ",성별:남"
+				 		+ ",주소:서울특별시"
+				 		+ ",특기:[검술,코딩]"
+				 		+ ",가족관계:{\"#\":2,아버지:홍판서}"
+				 		+ ",회사:경기 수원시}";
+
 		JSONObject json = new JSONObject(data);
+		String result = json.getJSONArray("특기").get(1).toString();
 		
-		System.out.println(json.get("이름").toString());
+		System.out.println(result);
+	
+	}
+	
+	
+	public static void 실습문제2_2()
+	{
+
+		String str = "{id:chatcmpl-6vX5cfe1VRa29F7AzS8kBmYjbh4In"
+				+ ",object:chat.completion"
+				+ ",created:1679169912"
+				+ ",model:gpt-3.5-turbo-0301"
+				+ ",usage:{prompt_tokens:11"
+						+ ",completion_tokens:32"
+						+ ",total_tokens:43}"
+				+ ",choices:["
+							+ "{message:{role:assistant"
+									  + ",content:안녕하세요! 저는 AI 어시스턴트입니다. 어떤 도움이 필요하신가요?}"
+							  + ",finish_reason:stop"
+							  + ",index:0}"
+						 + "]}";
 		
-		JSONObject f = json.getJSONObject("친구");
-		System.out.println(f.get("이름"));
+
+		JSONObject json = new JSONObject(str);
+		JSONArray choices = json.getJSONArray("choices");
+		JSONObject temp = choices.getJSONObject(0);
+		JSONObject message = temp.getJSONObject("message");
+		String result = message.get("content").toString();
 		
-		JSONArray hobby = json.getJSONArray("취미");
-		
-		String temp = hobby.get(1).toString();
-		System.out.println(temp);
+		System.out.println(result);
+	
 	}
 }
