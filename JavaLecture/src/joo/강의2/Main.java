@@ -7,6 +7,15 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+
+	
+		
+
+		
+		
+		
+		
+		/*
 		Scanner sc = new Scanner(System.in);
 		int atempts = 0;
 		int computer = (int)(Math.random()*100) + 1;
@@ -27,7 +36,7 @@ public class Main {
 			}
 			atempts++;
 		}
-		while(computer != user);
+		while(computer != user);*/
 
 	}
 	
