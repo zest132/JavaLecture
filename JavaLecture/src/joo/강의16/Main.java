@@ -465,7 +465,8 @@ public class Main {
 
 		try
 		{
-			BufferedReader fileReader = new BufferedReader(new FileReader("C:\\Users\\zest1\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의16\\chatGPTConnectionInfo.txt"));
+			String keyPath = "C:\\Users\\USER545\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의16\\chatGPTConnectionInfo.txt";
+			BufferedReader fileReader = new BufferedReader(new FileReader(keyPath));
 			
 			String data;
 			HashMap map = new HashMap();
@@ -497,7 +498,7 @@ public class Main {
 	
 		}catch(Exception ex)
 		{
-			
+			System.out.println(ex);
 		}
 	}
 }

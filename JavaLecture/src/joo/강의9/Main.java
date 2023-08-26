@@ -120,7 +120,32 @@ class Product
 }
 
 
+class test
+{
+	String name = new String("부모");
+	
+	int a=50;
+	public void print()
+	{
+		System.out.println("부모:"+a+"  주소:"+System.identityHashCode(a));
+		System.out.println("부모:"+name+"  주소:"+System.identityHashCode(name));
+	}
+}
 
+class test2 extends test
+{
+	
+	String name = new String("자식");
+	int a=10;
+	public void print()
+	{
+		super.a= 30;
+		System.out.println("자식:"+super.a+"  주소:"+System.identityHashCode(super.a));
+		System.out.println("자식:"+name+"  주소:"+System.identityHashCode(name));
+		System.out.println("자식:"+this.name+"  주소:"+System.identityHashCode(this.name));
+		System.out.println("자식:"+super.name+"  주소:"+System.identityHashCode(super.name));
+	}
+}
 
 public class Main {
 
@@ -129,7 +154,17 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 
-		실습문제2_4();
+	
+		test parent = new test();
+		
+		test2 t3 = new test2();
+		
+		
+		parent.print();
+		
+		t3.print();
+
+		
 
 	}
 
