@@ -31,14 +31,15 @@ class Bird extends Animal
 
 
 
-
-
+class Card
+{
+	public final int number  =10;  
+}
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		실습문제1_3();
 
 	}
 	
@@ -47,7 +48,7 @@ public class Main {
 	
 	public static void 실습문제1_1()
 	{
-		//지금까지 개발한 클래스들 패키지 나누기
+		//Galaxy,IPhone,Phone 클래스 참조
 	}
 	
 	public static void 실습문제1_2()
@@ -67,9 +68,8 @@ public class Main {
 		list[4]= new People("홍길동5",25,"000825-2456789" , "여자");
 		
 		for(People p : list)
-			
 		{
-			System.out.println(p.toString());
+			System.out.println(p);
 			
 		}
 
