@@ -11,6 +11,21 @@ import java.util.Scanner;
 
 import org.json.JSONObject;
 
+
+class Repair
+{
+	
+}
+
+class test
+{
+	void repair(Repair unit)
+	{
+		
+	}
+}
+
+
 public class Main {
 
 	public static void main(String[] args) {
