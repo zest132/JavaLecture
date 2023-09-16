@@ -39,8 +39,29 @@ public class Main {
 		
 	}
 	
+	
 	public static void 실습문제2_1()
 	{
+		for(int i=0;i<11;i++)
+		{
+			try
+			{
+				Thread.sleep(1000);
+				System.out.println(i);
+		
+			}catch(Exception ex)
+			{
+				
+			}
+		}
+		
+	}
+	
+	
+	
+	public static void 실습문제2_2()
+	{
+		
 		new Thread(new Runnable(){
 			 @Override
 			public void run() {
@@ -67,7 +88,7 @@ public class Main {
 	
 	
 	
-	public static void 실습문제2_2()
+	public static void 실습문제2_3()
 	{
 		Thread th = new Thread(new Runnable(){
 			 @Override

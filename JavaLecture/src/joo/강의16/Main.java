@@ -240,7 +240,9 @@ public class Main {
 	}
 	
 	
-	
+	/*
+	 * receive 메서드 생성
+	 */
 	public static void 실습문제1_4()
 	{
 		String key = "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";
@@ -288,7 +290,7 @@ public class Main {
 		try
 		{
 			
-			HttpURLConnection con = gpt.connect();
+			gpt.connect();
 	
 			//http 통신시 데이터를 서버에 전송하기 위해 스트림을 연다( 스트림이란 데이터가 왔다갓다 하는 통로이다)
 			OutputStream out = con.getOutputStream();
