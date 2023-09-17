@@ -13,11 +13,16 @@ import org.json.JSONObject;
 
 public class ChatGPT {
 
+
+	private HttpURLConnection con;
+	
+	
+	
 	private String key;
 	
 	private JSONObject sendMsg = new JSONObject();
 	
-	private HttpURLConnection con;
+	
 	
 	public ChatGPT(String key)
 	{
