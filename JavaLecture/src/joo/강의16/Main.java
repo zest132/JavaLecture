@@ -290,7 +290,7 @@ public class Main {
 		try
 		{
 			
-			gpt.connect();
+			HttpURLConnection con = gpt.connect();
 	
 			//http 통신시 데이터를 서버에 전송하기 위해 스트림을 연다( 스트림이란 데이터가 왔다갓다 하는 통로이다)
 			OutputStream out = con.getOutputStream();
@@ -410,18 +410,18 @@ public class Main {
 			
 			while(true)
 			{
-				gpt.connect();
+				
 				
 				Scanner scan = new Scanner(System.in);
 				
 				System.out.print("나: ");
-				
 			
 				String msg = scan.nextLine();
 				
 				if(msg.equals("대화종료"))
 					break;
 				
+				gpt.connect();
 				gpt.send(msg);
 				String response = gpt.receive();
 				
@@ -450,9 +450,6 @@ public class Main {
 			
 			while(true)
 			{
-				
-				gpt.connect("https://api.openai.com/v1/chat/completions");
-				
 				Scanner scan = new Scanner(System.in);
 				
 				System.out.print("나: ");
@@ -463,6 +460,8 @@ public class Main {
 				if(msg.equals("대화종료"))
 					break;
 				
+				
+				gpt.connect("https://api.openai.com/v1/chat/completions");
 				gpt.send(msg);
 				String response = gpt.receive();
 				
@@ -479,11 +478,10 @@ public class Main {
 	
 	public static void 실습문제1_12()
 	{
-
 		try
 		{
-			String keyPath = "C:\\Users\\USER545\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의16\\chatGPTConnectionInfo.txt";
-			BufferedReader fileReader = new BufferedReader(new FileReader(keyPath));
+			String connectionInfoPath = "C:\\Users\\USER545\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의16\\chatGPTConnectionInfo.txt";
+			BufferedReader fileReader = new BufferedReader(new FileReader(connectionInfoPath));
 			
 			String data;
 			HashMap map = new HashMap();
@@ -493,19 +491,22 @@ public class Main {
 				
 				map.put(str[0], str[1]);
 			}
+			fileReader.close();
 			
 			String key = map.get("key").toString();
 			ChatGPT gpt = new ChatGPT(key);
+			
 			while(true)
 			{
-				gpt.connect(map.get("url").toString());
+				
 				Scanner scan = new Scanner(System.in);
 				System.out.print("나: ");
 				String msg = scan.nextLine();
 				
 				if(msg.equals("대화종료"))
 					break;
-				
+
+				gpt.connect(map.get("url").toString());
 				gpt.send(msg);
 				String response = gpt.receive();
 				

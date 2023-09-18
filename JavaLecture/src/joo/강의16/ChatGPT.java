@@ -72,7 +72,7 @@ public class ChatGPT {
 		//예제 -> messages\":[{\"role\":\"user\",\"content\":\"안녕\"},{\"role\":\"assistant\",\"content\":\"chatGPT의 대답\"}]
 		//String json = "{\"model\": \"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":\""+msg+"\"}]}";
 
-		JSONArray messages = (JSONArray)sendMsg.get("messages");
+		JSONArray messages = sendMsg.getJSONArray("messages");
 		
 		JSONObject json = new JSONObject();
 		
@@ -126,10 +126,6 @@ public class ChatGPT {
 		{
 			//chatGPT로 부터 응답코드를 받아온다 200이면 정상이다.에러가 발생하면 예외가 발생된다.
 			con.getResponseCode();
-			
-			
-			
-			
 			String json = receive(con.getInputStream());
 			String msg = parseJsonMsg(json);
 			
