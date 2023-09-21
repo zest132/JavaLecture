@@ -1,15 +1,20 @@
 package joo.강의1;
 
-import joo.강의10.People;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	 char a = 110;
-	 System.out.println(a);
+		
+
+	 
+	 System.out.println("안녕하세요!");
+
+	 
 
 	}
+
+
 	
 	public static void 실습문제1_1()
 	{
@@ -103,3 +108,16 @@ public class Main {
 	
 
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
