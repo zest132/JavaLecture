@@ -2,13 +2,19 @@ package joo.강의2;
 
 import java.util.Scanner;
 
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		Scanner scan= new Scanner(System.in);
 
-		실습문제1_5();
+		String str = scan.nextLine();
+		
+		char c = str.charAt(1);
+		
+		System.out.println(c);
 		
 		
 		/*
