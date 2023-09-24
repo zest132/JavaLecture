@@ -8,11 +8,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 
-		java.util.Scanner sc = new java.util.Scanner(System.in);
-		
-
-		System.out.println();
-		
+		실습문제1_5();
 		
 		
 		/*
@@ -93,8 +89,11 @@ public class Main {
 	{
 		int people = 65;
 		int carPassenger = 4;
-		
-		System.out.println((people /carPassenger) + (people%carPassenger > 0 ? 1:0));
+		 
+		System.out.println(people+"명이 모두 탈려면 " +
+		(people /carPassenger) + (people%carPassenger > 0 ? 1:0)
+		+"대의 차량이 필요합니다."
+				);
 	}
 	
 	
