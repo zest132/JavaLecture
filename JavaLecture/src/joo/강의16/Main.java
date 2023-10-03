@@ -480,7 +480,7 @@ public class Main {
 	{
 		try
 		{
-			String connectionInfoPath = "C:\\Users\\USER545\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의16\\chatGPTConnectionInfo.txt";
+			String connectionInfoPath = "C:\\Users\\zest1\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의16\\chatGPTConnectionInfo.txt";
 			BufferedReader fileReader = new BufferedReader(new FileReader(connectionInfoPath));
 			
 			String data;

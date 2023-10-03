@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		실습문제2_4_B();
+		실습문제3_2_A();
 		
 			
 	
@@ -300,27 +300,38 @@ public class Main {
 		
 		int mid=0;
 
-
 		if(number1>=number2) 
 		{
-			if(number1>=number3) //1이 가장크다. 중간값을 찾아야 한다.
+			if(number1>=number3) //최대: 1 중간: ? 최소: ?
 			{
-				if(number2>= number3) //중간값 찾기
-					mid = number3;
-				else
+				if(number2>= number3) //최대: 1 중간: 2 최소: 3
 					mid = number2;
+				else//최대: 1 중간: 3 최소: 2
+					mid = number3;
 				
-			}else
+			}else//1이 2보다 크며 3보다는 작으니 중간값이다.
 			{
-				
+				mid = number1;
 			}
-		}//number1<number2
-		else if(number3<number1) 
-			mid = number1;
-		else if(number3>number2) 
-			mid = number2;
-		else 
-			mid = number3;
+		}
+		else//2가 1보다 크다.
+		{
+			if(number2>=number3)//2가 1보다 크며 3보다도 크니 최대값이다.
+			{
+				//2가 최대값이니 1과 3을 비교해서 중간값을 찾아낸다.
+				if(number1 >= number3)//1이 2보다 작으면서 3보다 크니 중간값이다.
+				{
+					mid = number1;
+				}else//1이 2보다 작으면서 3보다 작으니 최소값이다. 즉 3이 중간값이다.
+				{
+					mid = number3;
+				}
+			}else //2가 1보다 크면서 3보다 작으니 중간값이다.
+			{
+				mid = number2;
+			}
+			
+		}
 
 		System.out.println("중간값은 : "+mid+ "입니다.");
 	}
@@ -345,7 +356,6 @@ public class Main {
 		if(min> number2) min = number2;
 		if(min> number3) min = number3;
 		
-
 		
 		int mid = number1+number2+number3-max-min;
 		
