@@ -9,8 +9,10 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-
-		실습문제1_4();
+		실습문제2_4_B();
+		
+			
+	
 
 	}
 	
@@ -49,16 +51,51 @@ public class Main {
 		System.out.println("성적을 입력하세요: ");
 		int score = scan.nextInt();
 		
-		if(score >=90) System.out.println("A학점입니다.");
-		else if(score >=80) System.out.println("B학점입니다.");
-		else if(score >=70) System.out.println("C학점입니다.");
-		else if(score >=60) System.out.println("D학점입니다.");
-		else System.out.println("F학점입니다.");
+		if(score >=90) 
+			System.out.println("A학점입니다.");
+		else if(score >=80) 
+			System.out.println("B학점입니다.");
+		else if(score >=70) 
+			System.out.println("C학점입니다.");
+		else if(score >=60) 
+			System.out.println("D학점입니다.");
+		else 
+			System.out.println("F학점입니다.");
 		
 		
 	}
 	
-	public static void 실습문제1_4()
+	
+	public static void 실습문제1_4_A()
+	{
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("정수를 입력하세요");
+		int number1 = scan.nextInt();
+		int number2 = scan.nextInt();
+		int number3 = scan.nextInt();
+
+		if(number1 >= number2)
+		{
+			if(number1 >= number3)
+				System.out.println("최대값은"+number1+"입니다.");
+			else
+				System.out.println("최대값은"+number3+"입니다.");
+		}
+		else
+		{
+			if(number2 >= number3)
+				System.out.println("최대값은"+number2+"입니다.");
+			else
+				System.out.println("최대값은"+number3+"입니다.");
+		}
+			
+		
+
+		
+	}
+	
+	public static void 실습문제1_4_B()
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -78,8 +115,27 @@ public class Main {
 		
 		
 	}
-	
 	public static void 실습문제2_1()
+	{
+		int number = 2;
+		
+		switch(number)
+		{
+		case 1:
+			System.out.println("하나");
+			break;
+		case 2:
+			System.out.println("둘");
+			break;
+		case 3:
+			System.out.println("셋");
+			break;
+		}
+	
+	}
+	
+	
+	public static void 실습문제2_2()
 	{
 		Scanner scan = new Scanner(System.in);
 
@@ -104,7 +160,36 @@ public class Main {
 		
 	}
 	
-	public static void 실습문제2_2_A()
+	public static void 실습문제2_3()
+	{
+		
+		System.out.println("성적을 입력하세요:");
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		
+		switch(num/10)
+		{
+		case 9,10:
+			System.out.println("A학점입니다.");
+			break;
+		case 8:
+			System.out.println("B학점입니다.");
+			break;
+		case 7:
+			System.out.println("C학점입니다.");
+			break;
+		case 6:
+			System.out.println("D학점입니다.");
+			break;
+		default:
+			System.out.println("F학점입니다.");
+			break;
+		}
+	}
+	
+	
+	
+	public static void 실습문제2_4_A()
 	{
 		
 		int computer = (int)(Math.random()*3)+1;
@@ -151,7 +236,7 @@ public class Main {
 		}
 	}
 	
-	public static void 실습문제2_2_B()
+	public static void 실습문제2_4_B()
 	{
 		
 		int computer = (int)(Math.random()*3)+1;
@@ -195,7 +280,6 @@ public class Main {
 		int input = scan.nextInt();
 		
 		
-		
 		if(input>0)
 			System.out.println("양수입니다.");
 		else if(input==0)
@@ -219,12 +303,16 @@ public class Main {
 
 		if(number1>=number2) 
 		{
-			if(number3>=number1) {
-				mid = number1;
-			}else if(number3<=number2) {
-				mid = number2;
-			}else {
-				mid = number3;
+			if(number1>=number3) //1이 가장크다. 중간값을 찾아야 한다.
+			{
+				if(number2>= number3) //중간값 찾기
+					mid = number3;
+				else
+					mid = number2;
+				
+			}else
+			{
+				
 			}
 		}//number1<number2
 		else if(number3<number1) 
