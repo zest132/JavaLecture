@@ -9,13 +9,45 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		실습문제3_2_A();
+		int a = 10;
+		if(a>=10)
+			System.out.println("10보다 같거나 크다.");
+		 if(a>=5)
+			System.out.println("5~9");
+		 if(a>=5)
+			System.out.println("0~4");
+		
+			System.out.println("음수입니다.");
 		
 			
 	
 
 	}
 	
+	
+	public static void 교재예시()
+	{
+		int a = 10;
+		if(a>=10)
+			System.out.println("10보다 같거나 크다.");
+		else if(a>=5)
+			System.out.println("5~9");
+		else if(a>=5)
+			System.out.println("0~4");
+		else
+			System.out.println("음수입니다.");
+		
+		
+		 if(a>=10)
+			System.out.println("10보다 같거나 크다.");
+		 if(a>=5)
+			System.out.println("5~9");
+		 if(a>=5)
+			System.out.println("0~4");
+		
+			System.out.println("음수입니다.");
+			
+	}
 	
 	public static void 실습문제1_1()
 	{
