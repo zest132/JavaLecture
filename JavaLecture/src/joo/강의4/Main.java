@@ -9,8 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		실습문제4_1();
-
+		실습문제3_2();
+			
 	
 	}
 	
@@ -19,12 +19,8 @@ public class Main {
 	{
 		for(int i =0;i<=5;i++)
 			System.out.print(i);
-		
-		
-		System.out.println();
-		
-		for(int i =1;i<=5;i++)
-			System.out.println(i);
+
+	
 	}
 	
 	public static void 실습문제1_2()
@@ -111,6 +107,35 @@ public class Main {
 	
 	public static void 실습문제2_2()
 	{
+		
+		int cnt=1;
+		while(cnt<=100)
+		{
+			if(cnt %2 ==0)
+			System.out.println(cnt);
+			
+			cnt++;
+			
+		}
+		
+	}
+	
+	public static void 실습문제2_3()
+	{
+		
+		int sum = 0;
+		
+		int i=0;
+		while(sum<150)
+		{
+			sum +=++i;
+			System.out.println("누적 합계:"+sum+ "  현재 숫자 : "+i);
+		}
+		
+	}
+	
+	public static void 실습문제2_4()
+	{
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("숫자를 입력하세요:");
@@ -132,34 +157,23 @@ public class Main {
 		System.out.println("각 자리의 합계:" + sum);
 	}
 	
-	public static void 실습문제2_3()
-	{
-		
-		int sum = 0;
-		
-		int i=0;
-		while(sum<150)
-		{
-			sum +=++i;
-			System.out.println("누적 합계:"+sum+ "  현재 숫자 : "+i);
-		}
-		
-	}
+
+	
+	
 	
 	public static void 실습문제3_1()
 	{
-		int i=0;
-		
-		do
+		for(int i=10;i>=1 ;i--)
 		{
-			if(i%2==0)
-				System.out.println(i);
-			
-			
-			i++;
-		}while(i<=10);
-		
+			System.out.println(i);
+		}
 	}
+	
+	
+	
+	
+	
+	
 	
 	public static void 실습문제3_2()
 	{
@@ -188,7 +202,9 @@ public class Main {
 		}while(computer != user);
 	}
 	
-	public static void 실습문제4_1()
+	
+	
+	public static void 실습문제3_3()
 	{
 		int isPrimeNumber;
 
@@ -206,7 +222,26 @@ public class Main {
 		}
 	}
 	
-	public static void 실습문제4_2()
+	
+	
+	public static void 실습문제3_4()
+	{
+		int preNumber=0;
+		int fibonacci=1;
+		int nextNumber=1;
+		
+		for(int i =0;i<12;i++)
+		{
+			nextNumber = preNumber+fibonacci;
+			
+			System.out.print(fibonacci+" ");
+			
+			preNumber=fibonacci;
+			fibonacci = nextNumber;
+		}
+	}
+	
+	public static void 실습문제3_5()
 	{
 		for (int i = 1 ; i <= 9 ; i++) 
 		{
@@ -227,26 +262,4 @@ public class Main {
 		}
 		
 	}
-	
-	
-	
-	public static void 실습문제4_3()
-	{
-		int preNumber=0;
-		int fibonacci=1;
-		int nextNumber=1;
-		
-		for(int i =0;i<12;i++)
-		{
-			nextNumber = preNumber+fibonacci;
-			
-			System.out.print(fibonacci+" ");
-			
-			preNumber=fibonacci;
-			fibonacci = nextNumber;
-		}
-	}
-	
-	
-	
 }
