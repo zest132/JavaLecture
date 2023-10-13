@@ -11,7 +11,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-	int[][] score = new int [5][];
+	int score  = 10;
 		
 		
 
