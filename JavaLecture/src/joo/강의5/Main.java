@@ -11,18 +11,44 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-	int score  = 10;
+		int[][] arr = new int[5][3];
 		
 		
-
+		arr[0][0] = 10;
+		arr[0][1] = 20;
+		arr[0][2] = 30;
+		
+		arr[1][0] = 40;
+		arr[1][1] = 50;
+		arr[1][2] = 60;
+	}
 	
+	
+	public static void 실습문제1_1()
+	{
+		int[] arr = new int[5];
+		
+		arr[0] = 0;
+		arr[1] = 10;
+		arr[2] = 20;
+		arr[3] = 30;
+		arr[4] = 40;
+		
+		for(int i=0;i<arr.length;i++)
+			System.out.println(arr[i]);
+		
+		
+		
+		for(int i : arr)
+			System.out.println(i);
+		
 	}
 	
 	
 	/*
 	 * 1. int 타입 길이5의 배열을 만들어 임의의 값을 넣어 평균을 구해보자.
 	 */
-	public static void 실습문제1_1()
+	public static void 실습문제1_2()
 	{
 		int[] arr = {10,20,30,40,50};
 		
@@ -38,7 +64,7 @@ public class Main {
 			sum +=arr[i];
 		
 		
-		System.out.println(sum/(float)arr.length);
+		System.out.println(sum/arr.length);
 	}
 	
 	
@@ -46,7 +72,7 @@ public class Main {
 	/*
 	 * int 타입 길이 10의 배열을 만들어 임의의 값을 넣고 최대값과 최소값을 출력하자
 	 */
-	public static void 실습문제1_2()
+	public static void 실습문제1_3()
 	{
 		int[] arr = {5,478,41,2,45,758,14,3,97,10};
 		
@@ -71,7 +97,7 @@ public class Main {
 	/*
 	 * int타입 길이10의 배열에 0~9 까지의 랜덤한값을 넣은후 오름차순으로 정렬하여보자
 	 */
-	public static void 실습문제1_3()
+	public static void 실습문제1_4()
 	{
 		int count=0;
 		int[] arr = new int[10];
