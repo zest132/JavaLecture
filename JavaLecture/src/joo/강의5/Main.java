@@ -11,16 +11,13 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		int[][] arr = new int[5][3];
+		int[] student= null;
 		
 		
-		arr[0][0] = 10;
-		arr[0][1] = 20;
-		arr[0][2] = 30;
+		for(int i=0 ;i<student.length;i++)
+			System.out.println(student[i]);
 		
-		arr[1][0] = 40;
-		arr[1][1] = 50;
-		arr[1][2] = 60;
+		
 	}
 	
 	
