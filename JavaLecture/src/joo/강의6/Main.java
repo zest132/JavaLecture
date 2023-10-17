@@ -52,9 +52,17 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Tv t1 = new Tv();
-		t1.color="검정";
+		int[] student = new int[5];
 		
+		student[0]=10;
+		student[1]=50;
+		student[2]=30;
+		
+		student = new int[10];
+		
+		System.out.println(student[0]);
+		System.out.println(student[1]);
+		System.out.println(student[2]);
 		
 	}
 	
