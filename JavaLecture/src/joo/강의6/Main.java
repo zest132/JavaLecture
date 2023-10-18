@@ -52,17 +52,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		int[] student = new int[5];
+		MyMath m1 = new MyMath();
 		
-		student[0]=10;
-		student[1]=50;
-		student[2]=30;
+		int result = m1.add(15, 20);
 		
-		student = new int[10];
-		
-		System.out.println(student[0]);
-		System.out.println(student[1]);
-		System.out.println(student[2]);
+		System.out.println(result);
 		
 	}
 	
