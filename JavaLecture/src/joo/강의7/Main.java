@@ -3,32 +3,24 @@ package joo.강의7;
 import java.awt.Point;
 import java.util.Calendar;
 
-class Test
-{
 
-	int age ;
-	
-	void Temp(Test target)
-	{
-		target.age = 30;
-	}
-}
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		Test t1 = new Test();
+		Person p1 = new Person();
+		Person p2 = new Person();
 		
-		t1.age  =10;
+		p1.money = 5000;
 		
-		t1.Temp(t1);
+		p2.money = 10000;
 		
-		System.out.println(t1.age);
-
+		//p1이 p2에게 돈을 준다.
+		p1.send(p2);
 		
-
+		System.out.println(p1.money);
+		System.out.println(p2.money);
 	}
 	
 	
@@ -62,6 +54,11 @@ public class Main {
 		p1.RRN="950101-1234567";
 		p2.RRN="950101-6789123";
 		
+		String p1Gender = p1.getGender();
+		String p2Gender = p2.getGender();
+		
+		System.out.println(p1Gender);
+		System.out.println(p2Gender);
 		
 		p1.showState();
 		p2.showState();
@@ -133,93 +130,6 @@ public class Main {
 
 
 
-class Person
-{
-	String name = "홍길동";
-	String RRN;
-	
-	
-	void showState()
-	{
-		System.out.println("이름:"+ name + "\t주민번호:"+ RRN +"\t 성별: " + getGender() + "\t"+"나이:"+getAge());
-	}
-	
-	String getGender()
-	{
-		
-		String gender = RRN.substring(7,8);
-		
-		switch(gender)
-		{
-			case "1","3","5","7","9":
-				gender = "남";
-				break;
-				
-			default:
-			gender = "여";
-				break;
-		
-		}
-		
-		
-		/*
-		
-		if(gender.equals("1")
-			||gender.equals("3")
-			||gender.equals("5")
-			||gender.equals("7")
-			||gender.equals("9"))
-			gender = "남";
-		else
-			gender = "여";
-		*/
-		
-		
-		return gender;
-	}
-	
-	
-	int getAge()
-	{
-		
-		Calendar cal = Calendar.getInstance();
-		
-		int nowYear = cal.get(Calendar.YEAR);
-		int nowMonth = cal.get(Calendar.MONTH)+1;
-		int nowDay =  cal.get(Calendar.DAY_OF_MONTH);
-		
-		//년도 뒷자리 2개를 가져온다.
-		int year = Integer.parseInt(RRN.substring(0,2));
-		
-		//성별을 가져온다. 성별의 숫자에 따라 태어난 년도가 결정되기에 필요하다.
-		String generation = RRN.substring(7,8);
-		
-		
-	
-		
-		
-		switch(generation)
-		{
-			case "0","9":
-				year +=1800;
-				break;
-			case "1","2","5","6":
-				year +=1900;
-				break;
-			case "3","4","7","8":
-				year +=2000;
-				break;
-		}
-		
-		int bornMonth = Integer.parseInt(RRN.substring(2,4));
-		
-		int bornDay = Integer.parseInt(RRN.substring(4,6));
-
-		int bornYear = nowYear - year-(nowMonth>= bornMonth && nowDay>= bornDay ? 0 : 1);
-			
-		return bornYear;
-	}
-}
 
 
 
@@ -227,54 +137,6 @@ class Person
 
 
 
-class Marine {
-	int hp=40;
-	static int power=4;
-	static int armor=0;
-	static int shootingRange=6;
-	
-	Point position;
-	
-	void showState()
-	{
-		System.out.println("체력: "+hp+"\t 공격력:"+power + "\t 방어력:"+armor);
-	}
 
-	
 
-	double getDistance(Marine target)
-	{
-		//타깃과의 거리계산
-		double result = Math.sqrt(
-						  	Math.pow(target.position.x - position.x, 2)
-						  + Math.pow(target.position.y - position.y, 2)
-						);
-		
-		return result;
-	}
 
-	void attack(Marine target)
-	{
-		double distance = getDistance(target);
-		
-		if(distance >shootingRange)
-		{
-			System.out.println("공격이 닿지 않습니다. 타깃과의거리:"+distance);
-			return;
-		}
-		
-		target.hp -=(power-target.armor);
-		
-	}
-	void powerUp()
-	{
-		power++;	
-	}
-	
-	void armorUp()
-	{
-		armor ++;
-	}
-	
-	
-}
