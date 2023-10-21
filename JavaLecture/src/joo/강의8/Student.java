@@ -6,6 +6,8 @@ public class Student
 	int kor ;
 	int eng ;
 	int math ;
+	
+	
 	static int count;
 	
 
@@ -21,6 +23,7 @@ public class Student
 	
 	Student(String name)
 	{
+		
 		this.name = name;
 		
 	}
@@ -33,6 +36,10 @@ public class Student
 		this.math=math;
 		
 	}
+	
+	
+	
+	
 	
 	
 	void showState()

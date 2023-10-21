@@ -6,6 +6,57 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		실습문제1_2();
+	}
+
+	public static void 실습문제1_1()
+	{
+		Student student1 = new Student();
+		Student student2 = new Student("홍길동");
+		Student student3 = new Student("김길동",32,50,90);
+		
+		System.out.println(student2.name);
+		System.out.println(student3.name+"\t"
+				+"국어:"+student3.kor+"\t"
+				+"영어:"+student3.eng+"\t"
+				+"수학:"+student3.math+"\t"
+				);
+
+	}
+	
+	public static void 실습문제1_2()
+	{
+		Student student1 = new Student();
+		Student student2 = new Student("홍길동");
+		Student student3 = new Student("김길동",32,50,90);
+
+		
+		System.out.println(student3.name+"님의 성적합계는 "
+						 + student3.getTotal()+"입니다.");
+		System.out.println(student3.name+"님의 평균은 "
+						 +student3.getAverage()+"입니다.");
+
+	}
+	
+	
+	
+	public static void 실습문제1_3()
+	{
+		Student student1 = new Student();
+		Student student2 = new Student("홍길동");
+		Student student3 = new Student("김길동",32,50,90);
+		
+		System.out.println("현재 생성된 학생 객체는:"+Student.count+"개 입니다.");
+		System.out.println(student3.name+"님의 성적합계는 "
+						 + student3.getTotal()+"입니다.");
+		System.out.println(student3.name+"님의 평균은 "
+						 +student3.getAverage()+"입니다.");
+
+	}
+	
+	
+	public static void 정렬()
+	{
 		final int LIST_CNT = 10;
 		
 		Student[] studentList  = new Student[LIST_CNT];
@@ -43,10 +94,7 @@ public class Main {
 		System.out.println("---------정렬 완료---------");
 		for(Student std : sortList)
 			std.showState();
-		
-	
 	}
-
 }
 
  
