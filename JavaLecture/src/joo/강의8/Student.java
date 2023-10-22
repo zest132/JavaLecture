@@ -18,14 +18,14 @@ public class Student
 	
 	Student()
 	{ 
-		count++;
+		
 	}
 	
 	Student(String name)
 	{
 		
 		this.name = name;
-		count++;
+		
 	}
 	
 	Student(String name, int kor, int eng,int math)
@@ -34,7 +34,7 @@ public class Student
 		this.kor =kor;
 		this.eng = eng;
 		this.math=math;
-		count++;
+		
 	}
 	
 	

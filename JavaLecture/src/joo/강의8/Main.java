@@ -6,7 +6,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		실습문제1_3();
+		Bird bird1 = new Bird();
+		Bird bird2 = new Bird();
+		Bird bird3 = new Bird();
+		System.out.println("bird1 참조변수: "+bird1);
+		System.out.println("bird2 참조변수: "+bird2);
+		System.out.println("bird3 참조변수: "+bird3);
+		
+		bird1.eat();
+		bird2.eat();
+		bird3.eat();
 	}
 
 	public static void 실습문제1_1()
