@@ -12,7 +12,7 @@ public class Bird {
 	
 	Bird(int age)
 	{
-		this.age = 1;
+		this.age =age;
 	}
 	
 	
