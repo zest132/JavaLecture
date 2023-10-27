@@ -2,7 +2,7 @@ package joo.강의9;
 
 
 
-public class Marine extends Unit{
+public class Marine{
 
 	String name;
 	public static int count;
