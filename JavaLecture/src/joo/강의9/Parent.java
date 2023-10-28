@@ -1,11 +1,16 @@
 package joo.강의9;
 
-public class Parent   {
+public class Parent   extends GrandParent{
 	
 	
 	String name = "부모";
-	
 
+	Parent getInstance()
+	{
+		return this;
+	}
+	
+	
 	
 	Parent(String name)
 	{

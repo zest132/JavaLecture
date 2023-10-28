@@ -5,8 +5,11 @@ public  class Car {
 	
 	 int speed;
 	 
+	 
+
 	 public Door doors[] = new Door[4];
 	 
+
 	 public Car()
 	 {
 		 

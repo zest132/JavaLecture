@@ -152,34 +152,34 @@ public class Main {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-
 	
-		test parent = new test();
-		
-		test2 t3 = new test2();
-		
-		
-		parent.print();
-		
-		t3.print();
-
-		
-
+		실습문제2_4();
 	}
 
 	
 	public static void 실습문제1_1()
 	{
 		OilCar car = new OilCar();
+		car.speed = 100;
+		car.Oil = 100;
+		System.out.println(car.speed);
+		System.out.println(car.Oil);
+	}
+	
+	public static void 실습문제1_2()
+	{
+		OilCar car = new OilCar();
+		
 		car.go(100);
 		System.out.println(car.speed);
+		
 		car.stop();
 		System.out.println(car.speed);
 	}
 	
 	
-	public static void 실습문제1_2()
+	
+	public static void 실습문제1_3()
 	{
 		
 		
@@ -200,7 +200,7 @@ public class Main {
 
 	}
 	
-	public static void 실습문제1_3()
+	public static void 실습문제1_4()
 	{
 		ElectricCar car = new ElectricCar();
 		
