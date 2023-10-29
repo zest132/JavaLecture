@@ -40,7 +40,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-
+		실습문제2_2();
+		
+	
 	}
 	
 	
@@ -69,25 +71,32 @@ public class Main {
 		
 		for(People p : list)
 		{
-			System.out.println(p);
+			System.out.println(p.toString());
 			
 		}
 
 		
 	}
-	
-	
-	
 	public static void 실습문제2_1()
 	{
 		Time t = new Time();
-		t.setHour(30);
+		t.hour = 20;
+		t.minute = 13;
+		t.second = 10;
+		System.out.println(t.toString());
+	}
+
+	
+	public static void 실습문제2_2()
+	{
+		Time t = new Time();
+		t.setHour(30);//30을 넘겨줘도 메서드 내부에서 적절하지 않는 값이면 멤버변수에 값을 넣지 않는다.
 		System.out.println(t.toString());
 		
 		t.setHour(20);
 		System.out.println(t.toString());
 		
-		t.setMinute(-50);
+		t.setMinute(-50);//적절하지 않는 값이므로 메서드 내부에서 멤버변수에 값을 넣지 않는다.
 		System.out.println(t.toString());
 		
 		t.setMinute(50);
@@ -95,7 +104,7 @@ public class Main {
 		
 	}
 	
-	public static void 실습문제2_2()
+	public static void 실습문제2_3()
 	{
 		serverConnection con = serverConnection.getInstance();
 		serverConnection con1 = serverConnection.getInstance();

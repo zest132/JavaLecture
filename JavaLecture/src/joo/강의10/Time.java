@@ -2,11 +2,17 @@ package joo.강의10;
 
 public class Time {
 
-	public int hour;
-	private int minute;
-	private int second;
+	int hour;
+	int minute;
+	int second;
 	
-
+	public String toString()
+	{
+		return hour +"시 "+minute+ "분 "+second+"초";
+	}
+	
+	
+	
 	public int getHour()
 	{
 		return hour;
@@ -45,9 +51,6 @@ public class Time {
 	}
 
 	
-	public String toString()
-	{
-		return "hour: "+hour +" minute: "+minute+ " second: "+second;
-	}
+
 	
 }

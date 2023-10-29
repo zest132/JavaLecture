@@ -120,17 +120,6 @@ class Product
 }
 
 
-class test
-{
-	String name = new String("부모");
-	
-	int a=50;
-	public void print()
-	{
-		System.out.println("부모:"+a+"  주소:"+System.identityHashCode(a));
-		System.out.println("부모:"+name+"  주소:"+System.identityHashCode(name));
-	}
-}
 
 class test2 extends test
 {
@@ -147,13 +136,32 @@ class test2 extends test
 	}
 }
 
+
+
+
+class People
+{
+	final String jumin;
+	
+	
+	People(String jumin)
+	{
+		this.jumin =jumin;
+	}
+}
+
+
+
+
 public class Main {
 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		실습문제2_4();
+		People p = new People("901225-1234567");
+		People p1 = new People("650512-2234567");
+		
 	}
 
 	
