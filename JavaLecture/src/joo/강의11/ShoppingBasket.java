@@ -11,8 +11,6 @@ public class ShoppingBasket {
 	//현재 장바구니에 담긴 물품 리스트
 	public List<Item> itemList = new ArrayList();
 	
-	
-
 	public String getInfoList()
 	{
 		String infoList="";
@@ -22,7 +20,6 @@ public class ShoppingBasket {
 			
 			return infoList;
 	}
-	
 
 	public int getTotalPrice()
 	{
@@ -33,23 +30,15 @@ public class ShoppingBasket {
 
 		return sum;
 	}
-	
-	public int getTotalMileage()
-	{
-		int sum =0;
-		
-		for(Item item: itemList)
-			sum +=item.price / 100 *item.mileagePercent; 
-			
-		return sum;
-	}
-	
+
 	public void addItem(Item item)
 	{
 
+		if(item instanceof Bicycle)
+			return;
 
-		
-			
+		itemList.add(item);
+	
 	}
 	
 	

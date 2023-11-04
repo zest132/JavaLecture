@@ -6,8 +6,7 @@ public abstract class Item {
 	public int barcodNumber;
 	public String name;
 	public int price;
-	public int mileagePercent;
-	
+	int mileagePercent;
 	public Item()
 	{
 		
@@ -18,18 +17,11 @@ public abstract class Item {
 		this.barcodNumber = barcodNumber;
 		this.name = name;
 		this.price = price;
-		this.mileagePercent = 1;
 	}
-	
-	public Item(int barcodNumber, String name, int price,int mileagePercent)
-	{
-		this(barcodNumber,name,price);
-		this.mileagePercent = mileagePercent;
-	}
-	
+
 	public String toString()
 	{
-		return "물품명: "+ name + " 가격: "+price;
+		return "바코드:"+barcodNumber+"\t물품명: "+ name + "\t가격: "+price;
 	}
 	
 }

@@ -13,22 +13,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		실습문제2_4();
+		실습문제1_6();
 		
 	}
 
 	public static void 실습문제1_1()
 	{
-		//클래스관의 관계를 설정하자.
-		// ShoppingBasket 은 포함관계로 List<Item> list 멤버변수를 가진다.
-		//TV, Sofa, Bicycle 은 Item을 상속 받는다.
-		
+
 		ShoppingBasket basket = new ShoppingBasket();
-		
+	
+		//장바구니에는 다형성에 의해 Item의 자식타입이면 어떤 객체든 들어간다.
 		basket.itemList.add(new TV());
 		basket.itemList.add(new Sofa());
-		
-	
 		
 	}
 	
@@ -41,35 +37,93 @@ public class Main {
 		sb.itemList.add(new Sofa(2, "푹신한쇼파", 23));
 		sb.itemList.add(new Bicycle(3, "천리마 자전거", 100));
 		
-		System.out.println(sb.getInfoList());
+		for(Item item : sb.itemList)
+		{
+			System.out.println("바코드번호:"+item.barcodNumber
+								+"물품명:"+item.name
+								+"가격"+item.price
+								);
+		}
+		
 		
 		
 	}
 	
 	public static void 실습문제1_3()
 	{
+		ShoppingBasket sb = new ShoppingBasket();
+		
+
+		sb.itemList.add(new TV(1, "삼성50인치", 0));
+		sb.itemList.add(new Sofa(2, "푹신한쇼파", 23));
+		sb.itemList.add(new Bicycle(3, "천리마 자전거", 100));
+		
+		for(Item item : sb.itemList)
+		{
+			String result = item.toString();
+			
+			System.out.println(result);
+		}
+	}
+	
+	public static void 실습문제1_4()
+	{
 		ShoppingBasket shopping = new ShoppingBasket();
 		
-		/*
-				shopping.itemList.add(new Sofa(1,"샤넬쇼파",25000));
-				shopping.itemList.add(new Sofa(2,"푹신한쇼파",25000));
-				shopping.itemList.add(new TV(3,"삼성 QLED",10000));
-				shopping.itemList.add(new Bicycle(1,"빠른 자전거",5000));
-				*/
-				
-				shopping.addItem(new Sofa(1,"샤넬쇼파",25000));
-				shopping.addItem(new Sofa(2,"푹신한쇼파",25000));
-				shopping.addItem(new TV(3,"삼성 QLED",10000));
-				shopping.addItem(new Bicycle(1,"빠른 자전거",5000));
-				
-				System.out.println(shopping.getInfoList());
-				
-				
-				System.out.println("합계: "+shopping.getTotalPrice());
-				System.out.println("예상 적립 마일리지: "+shopping.getTotalMileage());
+		shopping.itemList.add(new Sofa(1,"샤넬쇼파",25000));
+		shopping.itemList.add(new Sofa(2,"푹신한쇼파",25000));
+		shopping.itemList.add(new TV(3,"삼성 QLED",10000));
+		shopping.itemList.add(new Bicycle(1,"빠른 자전거",5000));
+		
+		System.out.println(shopping.getInfoList());
+
+	
+		
 				
 			
 	}
+	
+	public static void 실습문제1_5()
+	{
+		ShoppingBasket shopping = new ShoppingBasket();
+		
+		shopping.itemList.add(new Sofa(1,"샤넬쇼파",25000));
+		shopping.itemList.add(new Sofa(2,"푹신한쇼파",25000));
+		shopping.itemList.add(new TV(3,"삼성 QLED",10000));
+		shopping.itemList.add(new Bicycle(1,"빠른 자전거",5000));
+		
+		System.out.println(shopping.getInfoList());
+
+		System.out.println("합계: "+shopping.getTotalPrice());
+		
+				
+			
+	}
+	
+	public static void 실습문제1_6()
+	{
+		ShoppingBasket shopping = new ShoppingBasket();
+		
+		//itemList를 외부에서 직접 사용하지 못한다.
+		//shopping.itemList.add(new Sofa(1,"샤넬쇼파",25000));
+		//shopping.itemList.add(new Sofa(2,"푹신한쇼파",25000));
+		//shopping.itemList.add(new TV(3,"삼성 QLED",10000));
+		//shopping.itemList.add(new Bicycle(1,"빠른 자전거",5000));
+		
+		//필터링 기능이 있는 addItem을 사용한다.
+		shopping.addItem(new Sofa(1,"샤넬쇼파",25000));
+		shopping.addItem(new Sofa(2,"푹신한쇼파",25000));
+		shopping.addItem(new TV(3,"삼성 QLED",10000));
+		shopping.addItem(new Bicycle(1,"빠른 자전거",5000));
+
+		System.out.println(shopping.getInfoList());
+
+		System.out.println("합계: "+shopping.getTotalPrice());
+		
+				
+			
+	}
+	
 	
 	static void 실습문제2_1()
 	{
