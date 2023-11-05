@@ -29,7 +29,13 @@ public class BlackSmith {
 	public void repaire(Weapon weapon)
 	{
 		if(weapon instanceof Repairable)
-			weapon.durability+=10;
+		{
+			Repairable temp = (Repairable)weapon;
+			
+			temp.repaired();
+			//weapon.durability+=10;
+			
+		}
 		else 
 			System.out.println("수리가 불가능한 무기입니다.");
 	}

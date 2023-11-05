@@ -6,7 +6,10 @@ public class User {
 	int hp;
 	public Weapon Weapon;
 
-	
+	public User()
+	{
+		
+	}
 	
 	public User(String id, int hp, Weapon Weapon)
 	{
@@ -14,6 +17,14 @@ public class User {
 		this.hp = hp;
 		this.Weapon = Weapon;
 	}
+	
+	public String toString()
+	{
+		return "아이디: "+ id+" 체력: "+ hp + " 무기 : {"+ Weapon.toString()+"}";
+	
+	}
+	
+	
 	
 	public void attack(User target)
 	{
@@ -32,9 +43,5 @@ public class User {
 	}
 	
 	
-	public String toString()
-	{
-		return "아이디: "+ id+" 체력: "+ hp + " 무기 : {"+ Weapon.toString()+"}";
-	
-	}
+
 }

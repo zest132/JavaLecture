@@ -22,9 +22,7 @@ public class Main {
 	public static void main(String[] args) {
 	
 		
-		Integer a = 15;
-		
-		int b = Integer.parseInt("15");
+		실습문제1_1();
 		
 		
 		
@@ -115,14 +113,16 @@ public class Main {
 			MyMath m = new MyMath();
 			
 			m.minus(10, 0);
-		}catch(Exception ex)
+		}
+		catch(MyMath.CanNotMinusZeroException ex1)
 		{
 			
 		}
-		/*catch(MyMath.CanNotMinusZeroException ex1)
+		catch(Exception ex)
 		{
 			
-		}*/
+		}
+		
 		
 		
 	}

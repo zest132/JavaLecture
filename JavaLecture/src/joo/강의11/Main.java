@@ -1,11 +1,6 @@
 package joo.강의11;
 
-import joo.강의11.RPG.BlackSmith;
-import joo.강의11.RPG.Gun;
-import joo.강의11.RPG.Punch;
-import joo.강의11.RPG.Repairable;
-import joo.강의11.RPG.Sword;
-import joo.강의11.RPG.User;
+import joo.강의11.RPG.*;
 
 
 
@@ -13,7 +8,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		실습문제1_6();
+		실습문제2_5();
 		
 	}
 
@@ -127,9 +122,20 @@ public class Main {
 	
 	static void 실습문제2_1()
 	{
-		//User 클래스는 Weapon 클래스를 포함한다.
-		//Sword, Gun, Punch 클래스는 Weapon 클래스를 상속 받는다.
-		//Sword, Gun 클래스는 Repairable 인터페이스를 구현한다.
+		User user1 = new User();
+		user1.Weapon = new Gun();
+		
+		User user2 = new User();
+		user2.Weapon = new Punch();
+		
+		User user3 = new User();
+		user3.Weapon = new Sword();
+		
+		if(user1.Weapon instanceof Repairable)
+			System.out.println("user1의 무기는 수리가 가능합니다.");
+		
+		if(user2.Weapon instanceof Repairable)
+			System.out.println("user2의 무기는 수리가 가능합니다.");
 	}
 	
 	static void 실습문제2_2()
@@ -137,13 +143,6 @@ public class Main {
 		User user1 = new User("랭킹1위가자",100,new Gun(10,5));
 		
 		User user2 = new User("똥겜망해라",70,new Sword(15,10));
-		
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
 		
 		System.out.println(user1.toString());
 		System.out.println(user2.toString());
@@ -164,44 +163,41 @@ public class Main {
 		
 		System.out.println(user1.toString());
 		System.out.println(user2.toString());
+	}
+	
+	static void 실습문제2_4()
+	{
+		//무기 내구도를 0으로 준다.
+		User user1 = new User("랭킹1위가자",100,new Gun(10,0));
 		
-		
+		User user2 = new User("똥겜망해라",70,new Punch(15,0));
+		//대장장이 객체 생성
 		BlackSmith bm = new BlackSmith();
 		
 		//유저1의 무기를 대장장이에게 맡긴다.
 		bm.repaire(user1.Weapon);
 		System.out.println(user1.toString());
 		
+		//유저2의 무기를 대장장이에게 맡긴다.Punch는 수리가 불가능하다.
 		bm.repaire(user2.Weapon);
 		System.out.println(user2.toString());
 	}
 	
 	
-	static void  실습문제2_4()
+	static void  실습문제2_5()
 	{
-		User user1 = new User("랭킹1위가자",100,new Gun(10,5));
+		User user1 = new User("랭킹1위가자",100,new Gun(10,0));
 		
-		User user2 = new User("똥겜망해라",70,new Sword(15,10));
-		
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		user1.attack(user2);
-		
-		System.out.println(user1.toString());
-		System.out.println(user2.toString());
-		
+		User user2 = new User("똥겜망해라",70,new Sword(15,0));
 		
 		BlackSmith bm = new BlackSmith();
 		
 		//유저1의 무기를 대장장이에게 맡긴다.
-		bm.repaire((Repairable)user1.Weapon);
+		bm.repaire(user1.Weapon);
 
 		System.out.println(user1.toString());
 		
-		bm.repaire((Repairable)user2.Weapon);
+		bm.repaire(user2.Weapon);
 		System.out.println(user2.toString());
 	}
 }
