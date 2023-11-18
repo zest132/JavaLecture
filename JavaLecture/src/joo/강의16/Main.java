@@ -30,6 +30,44 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+String key = "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";
+		
+		ChatGPT gpt = new ChatGPT(key);
+		
+		try
+		{
+			
+			gpt.connect();
+	
+			//http 통신시 데이터를 서버에 전송하기 위해 스트림을 연다( 스트림이란 데이터가 왔다갓다 하는 통로이다)
+			OutputStream out = con.getOutputStream();
+
+			gpt.send(out, "안녕하세요");
+		
+			//chatGPT로 부터 응답코드를 받아온다 200이면 정상이다.에러가 발생하면 예외가 발생된다.
+			con.getResponseCode();
+			
+			
+			String response = gpt.receive(con.getInputStream());
+
+			String result = gpt.parseJsonMsg(response);
+			//응답을 출력한다.
+			System.out.println(result);
+	
+		}catch(Exception ex)
+		{
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		실습문제1_12();
 		
 	}
