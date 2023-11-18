@@ -22,7 +22,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		실습문제2_2();
+		실습문제2_1();
 		
 		
 	}
@@ -214,22 +214,26 @@ public class Main {
 		{
 			
 			String path = "C:\\Users\\USER545\\git\\JavaLecture\\JavaLecture\\src\\joo\\강의15";
+			//원본 파일을 객체화
 			File originalFile = new File(path+"\\original.txt");
+			//카피할 파일의 이름과 경로 지정
 			File copyFile = new File(path+"\\original_copy.txt");
 	
-			
+			//원본 파일을 읽어 들이기 위한 입력스트림
 			InputStream stream = new FileInputStream(originalFile);
+			
+			//입력스트림으로 읽어들인 데이터를 출력하여 복사할 출력스트림
 			OutputStream outStream = new FileOutputStream(copyFile);
 				
 			int data=0;
 			
+			//입력스트림을 통해 데이터를 읽어들인다.
 			while((data=stream.read()) != -1)
 			{
+				//읽어들인 데이터를 그대로 출력 스트림으로 출력하여 파일을 복사한다.
 				outStream.write(data);
 			
 			}
-			
-			
 			stream.close();
 			outStream.close();
 	
@@ -311,7 +315,7 @@ public class Main {
 				 		+ ",성별:남"
 				 		+ ",주소:서울특별시"
 				 		+ ",특기:[검술,코딩]"
-				 		+ ",가족관계:{\"#\":2,아버지:홍판서}"
+				 		+ ",가족관계:{아버지:홍판서}"
 				 		+ ",회사:경기 수원시}";
 
 		JSONObject json = new JSONObject(data);
