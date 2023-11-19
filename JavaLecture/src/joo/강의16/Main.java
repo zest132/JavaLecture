@@ -77,7 +77,7 @@ String key = "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";
 	{
 		try
 		{
-			String key = "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";
+			String key = "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";
 			
 			//URL주소를 객체화하는 클래스
 			URL url = new URL("https://api.openai.com/v1/chat/completions");
