@@ -11,12 +11,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		
-		int[] student= null;
-		
-		
-		for(int i=0 ;i<student.length;i++)
-			System.out.println(student[i]);
-		
+		연습문제2_1();
 		
 	}
 	
@@ -143,19 +138,19 @@ public class Main {
 		System.out.println("국어 \t영어 \t수학 \t평균");
 		for(int[] student : score)
 		{
-		int sum = 0;
+			int sum = 0;
 		
-		for(int i : student)
-		{
-		sum += i;
-		System.out.print(i+" \t");
+			for(int i : student)
+			{
+				sum += i;
+				System.out.print(i+" \t");
+			
+			}
 		
-		}
-		
-		System.out.print(sum/student.length);
-		
-		
-		System.out.println();
+			System.out.print(sum/student.length);
+			
+			
+			System.out.println();
 		}
 		
 	}
