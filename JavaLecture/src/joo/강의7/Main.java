@@ -9,18 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Person p1 = new Person();
-		Person p2 = new Person();
-		
-		p1.money = 5000;
-		
-		p2.money = 10000;
-		
-		//p1이 p2에게 돈을 준다.
-		p1.send(p2);
-		
-		System.out.println(p1.money);
-		System.out.println(p2.money);
+		실습문제1_2();
 	}
 	
 	

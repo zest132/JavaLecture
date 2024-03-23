@@ -1,7 +1,20 @@
 package joo.강의8;
 
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
 public class Student
 {
+	List<Point> result = new ArrayList<Point>();
+	
+	
+	Point pt ;
+	
+	
 	public String name ;
 	int kor ;
 	int eng ;
@@ -13,6 +26,7 @@ public class Student
 
 	{
 		count++;
+	
 	}
 	
 	
