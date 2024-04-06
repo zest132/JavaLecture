@@ -1,18 +1,52 @@
 package joo.강의11;
 
-import joo.강의11.RPG.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import joo.강의11.RPG.BlackSmith;
+import joo.강의11.RPG.Gun;
+import joo.강의11.RPG.Punch;
+import joo.강의11.RPG.Repairable;
+import joo.강의11.RPG.Sword;
+import joo.강의11.RPG.User;
 
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		실습문제2_5();
+		
+		List<Unit> list = new ArrayList<Unit>();
+		
+		
+		list.add(new Marine());
+		list.add(new Zealot());
+		list.add(new Zergling());
+		
+		Unit unit = list.get(2);//3번째 요소를 가져온다.
+		
+		Zergling zerg = (Zergling)unit;//실제 들어있는 객체는 Zergling 이므로 다운캐스팅 가능
+		
+		
 		
 	}
-
+	
+	
 	public static void 실습문제1_1()
+	{
+		ShoppingBasket basket = new ShoppingBasket();
+		
+		//장바구니의 멤버변수로 물건을 담아둘 3개의 List를 가지고 있다.
+		basket.bicycleList.add(new Bicycle());
+		basket.tvList.add(new TV());
+		basket.sofaList.add(new Sofa());
+		basket.sofaList.add(new Sofa());
+		
+		
+	
+	}
+
+	public static void 실습문제1_2()
 	{
 
 		ShoppingBasket basket = new ShoppingBasket();
@@ -23,7 +57,7 @@ public class Main {
 		
 	}
 	
-	public static void 실습문제1_2()
+	public static void 실습문제1_3()
 	{
 		ShoppingBasket sb = new ShoppingBasket();
 		
@@ -44,7 +78,7 @@ public class Main {
 		
 	}
 	
-	public static void 실습문제1_3()
+	public static void 실습문제1_4()
 	{
 		ShoppingBasket sb = new ShoppingBasket();
 		
@@ -61,7 +95,7 @@ public class Main {
 		}
 	}
 	
-	public static void 실습문제1_4()
+	public static void 실습문제1_5()
 	{
 		ShoppingBasket shopping = new ShoppingBasket();
 		
@@ -78,7 +112,7 @@ public class Main {
 			
 	}
 	
-	public static void 실습문제1_5()
+	public static void 실습문제1_6()
 	{
 		ShoppingBasket shopping = new ShoppingBasket();
 		
@@ -95,7 +129,7 @@ public class Main {
 			
 	}
 	
-	public static void 실습문제1_6()
+	public static void 실습문제1_7()
 	{
 		ShoppingBasket shopping = new ShoppingBasket();
 		

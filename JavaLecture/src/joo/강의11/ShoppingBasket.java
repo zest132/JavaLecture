@@ -8,6 +8,14 @@ import java.util.List;
 
 public class ShoppingBasket {
 
+	public List<TV> tvList = new ArrayList<TV>();
+	public List<Sofa> sofaList = new ArrayList<Sofa>();
+	public List<Bicycle>bicycleList = new ArrayList<Bicycle>();
+	
+	
+	
+	
+	
 	//현재 장바구니에 담긴 물품 리스트
 	public List<Item> itemList = new ArrayList();
 	

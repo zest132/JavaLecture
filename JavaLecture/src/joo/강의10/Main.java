@@ -34,6 +34,12 @@ class Bird extends Animal
 class Card
 {
 	public final int number  =10;  
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }
 
 public class Main {
