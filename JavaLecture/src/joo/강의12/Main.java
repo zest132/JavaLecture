@@ -22,9 +22,9 @@ public class Main {
 	public static void main(String[] args) {
 	
 		
-		실습문제1_1();
+
 		
-		
+		실습문제2_1();
 		
 
 		
@@ -34,6 +34,8 @@ public class Main {
 	{
 		throw new MyException("내가만든 예외");
 	}
+	
+	
 	
 	
 	public static void 실습문제1_1()
@@ -85,7 +87,25 @@ public class Main {
 		System.out.println(count+"번 만에 맞췄습니다."); 
 	}
 	
-	public static void 실습문제1_3()
+	
+	public static void 실습문제2_1()
+	{
+		MovieTicketValidator movie = new MovieTicketValidator();
+	
+		
+		 try {
+	            Scanner scanner = new Scanner(System.in);
+	            System.out.print("나이를 입력하세요: ");
+	            int age = scanner.nextInt();
+	            movie.checkAge(age);
+	            System.out.println("영화 티켓 구매가 가능합니다.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+	}
+	
+	
+	public static void 실습문제2_2()
 	{
 		try
 		{
@@ -99,14 +119,14 @@ public class Main {
 	
 	
 	
-	public static void 실습문제2_1()
+	public static void 실습문제3_1()
 	{
 		MyMath m = new MyMath();
 		
 		m.add(10, 0);
 	}
 	
-	public static void 실습문제2_2() 
+	public static void 실습문제3_2() 
 	{
 		try
 		{
@@ -127,11 +147,10 @@ public class Main {
 		
 	}
 	
-	public static void 실습문제2_3()
+	public static void 실습문제3_3()
 	{
 		File file = new File("C:\\Users\\zest1\\git\\JavaLecture\\JavaLecture\\src\\joo\\twelve\\test.txt");
-		
-		
+	
 		FileReader fileReader=null;
 		try
 		{

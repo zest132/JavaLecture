@@ -3,13 +3,25 @@ package joo.강의13;
 public class Warrior implements Cloneable{
 	String id;
 	int hp;
-	Point pt;
+	Point position;
 
-	public Warrior(String id, int hp, Point pt)
+	public Warrior(String id, int hp)
 	{
 		this.id = id;
 		this.hp = hp;
-		this.pt = pt;
+
+	}
+	
+	public Warrior(String id, int hp, Point position)
+	{
+		this(id,hp);
+		this.position = position;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "ID:"+id+" 체력:"+hp;
 	}
 	
 	@Override
@@ -30,11 +42,20 @@ public class Warrior implements Cloneable{
 		
 	}
 	
+	
+	
+	
+	
+
+	
+	
+
+	
 	public Warrior deepCopy()
 	{
 		Warrior result = this.clone();
 		
-		result.pt = new Point(pt.x,pt.y,pt.z);
+		result.position = new Point(position.x,position.y,position.z);
 		
 		
 		return result;

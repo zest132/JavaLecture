@@ -21,35 +21,8 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		
+		실습문제1_2();
 
-		System.out.println(0.1+0.2);
-		/*
-		int result = Math.abs(-30);
-		
-		System.out.println(result);
-		
-		 result = Math.min(15, -5);
-		System.out.println(result);
-		
-		*/
-		/*
-		Box<String> box = new Box<>();
-		Box<Integer> box2 = new Box<>();
-		box.setItem("가나다라");
-		
-		System.out.println(box.getItem());
-		
-		
-		MyStack<String> stack = new MyStack<>();
-		
-		stack.push("1번");
-		stack.push("2번");
-		stack.push("3번");
-		
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());*/
 	}
 	
 	
@@ -65,13 +38,18 @@ public class Main {
 		System.out.println(pt1.toString());
 	}
 	
+
+	
 	public static void 실습문제1_2()
 	{
-		String str = "abcdefgab";
+		Warrior w1 = new Warrior("전사1", 100);
 		
-		System.out.println(count(str,"ab"));
+		Warrior w2 = w1.clone();
 		
+		System.out.println(w2);
 	}
+	
+	
 	
 	public static void 실습문제1_3()
 	{
@@ -79,8 +57,24 @@ public class Main {
 		
 		Warrior w2 = w1.deepCopy();
 		
-		System.out.println(w2.toString());
+		
+		w2.position.x = 100;
+		w2.position.y = 100;
+		w2.position.z = 100;
+		
+		
+		System.out.println(w1.toString());
 	}
+	
+	
+	public static void 실습문제2_2_temp()
+	{
+		String str = "abcdefgab";
+		
+		System.out.println(count(str,"ab"));
+		
+	}
+	
 	
 	public static void 실습문제2_1()
 	{
