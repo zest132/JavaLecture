@@ -21,7 +21,7 @@ public class Warrior implements Cloneable{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "ID:"+id+" 체력:"+hp;
+		return "ID:"+id+" 체력:"+hp + " 현재 위치:"+position.toString();
 	}
 	
 	@Override
@@ -41,13 +41,6 @@ public class Warrior implements Cloneable{
 		return result;
 		
 	}
-	
-	
-	
-	
-	
-
-	
 	
 
 	

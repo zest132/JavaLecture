@@ -1,15 +1,34 @@
 package joo.강의14;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
+
+
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
-	
+		List<Book> bookList = new ArrayList();
 		
-		실습문제2_1();
+		bookList.add(new Book("해리포터와 비밀의방","조앤 k. 롤링"));
+		bookList.add(new Book("해리포터와 아즈카반의죄수","조앤 k. 롤링"));
+		bookList.add(new Book("백종원이 추천하는 집밥 메뉴","백종원"));
+		bookList.add(new Book("몰입","황농문"));
+		
+		
+		for(Book book : bookList)
+		{
+			if(book.author.equals("조앤 k. 롤링"))
+				System.out.println(book);
+			
+		}
+		
+		
+		
 
 	}
 	

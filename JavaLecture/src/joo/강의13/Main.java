@@ -21,11 +21,40 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		실습문제1_2();
-
+	
+String foods = "토마토,라면,계란,피자,당근,양파";
+		
+		
+		String[] result = foods.split(",");
+		
+		
+		for(String food : result)
+		{
+			System.out.println(food);
+		}
+		
+		
+		System.out.println("단어의 갯수는:"+result.length +"개 입니다.");
 	}
 	
 	
+	
+	/*
+	 * 
+	 * 	String foods = "토마토,라면,계란,피자,당근,양파";
+		
+		
+		String[] result = foods.split(",");
+		
+		
+		for(String food : result)
+		{
+			System.out.println(food);
+		}
+		
+		
+		System.out.println("단어의 갯수는:"+result.length +"개 입니다.");
+	 */
 	
 	
 	
@@ -57,7 +86,7 @@ public class Main {
 		
 		Warrior w2 = w1.deepCopy();
 		
-		
+		//w2의 위치정보를 변경하여도 w1은 영향을 받지 않는다.
 		w2.position.x = 100;
 		w2.position.y = 100;
 		w2.position.z = 100;
