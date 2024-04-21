@@ -1,6 +1,8 @@
 package joo.강의13;
 
-public class Box<T> {
+import joo.강의14.Book;
+
+public class Box<T extends Book> {
 
 	private T item;
 	

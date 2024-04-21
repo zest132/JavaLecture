@@ -22,19 +22,17 @@ public class Main {
 		// TODO Auto-generated method stub
 	
 	
-String foods = "토마토,라면,계란,피자,당근,양파";
+		MyArrayList<String> list = new MyArrayList<String>();
+		
+		for(int i =0 ; i< 15;i++)
+			list.add("데이터"+i);
+		
+		list.remove(9);
+		System.out.println(list.size());
 		
 		
-		String[] result = foods.split(",");
+
 		
-		
-		for(String food : result)
-		{
-			System.out.println(food);
-		}
-		
-		
-		System.out.println("단어의 갯수는:"+result.length +"개 입니다.");
 	}
 	
 	
@@ -137,6 +135,10 @@ String foods = "토마토,라면,계란,피자,당근,양파";
 		System.out.println(stack.pop());
 		System.out.println(stack.pop());
 	}
+	
+	
+	
+	
 	
 	public static void localTimeDateSample()
 	{

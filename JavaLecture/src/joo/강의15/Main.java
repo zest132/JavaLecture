@@ -22,7 +22,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		실습문제2_1();
+		
 		
 		
 	}

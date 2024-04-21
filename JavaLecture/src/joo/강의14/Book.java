@@ -6,6 +6,11 @@ public class Book {
 	String title;
 	String author;
 	
+	Book()
+	{
+		
+	}
+	
 	
 	Book(String title, String author)
 	{
